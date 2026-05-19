@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concord Through Time — Battles of Lexington &amp; Concord</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold:    #8b6214;
+      --gold-lt: #c8a840;
+      --ink-dk:  #1e0804;
+      --ink-md:  #3a1f08;
+      --ink-lt:  #5a3010;
+      --cream:   rgba(253,248,226,0.88);
+      --red:     #8b1a1a;
+      --blue:    #1a3a6b;
+      --font:    'IM Fell English', serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: radial-gradient(ellipse at 50% 30%, #fdf8e8 0%, #f5edcc 55%, #e8dda8 100%) fixed;
+      font-family: var(--font);
+      color: var(--ink-md);
+    }
+
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 28px; }
+
+    /* ── fade-in on scroll ─────────────────────────── */
+    .fi {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.85s ease, transform 0.85s ease;
+    }
+    .fi.show { opacity: 1; transform: none; }
+    .fi.d1 { transition-delay: 0.18s; }
+    .fi.d2 { transition-delay: 0.36s; }
+
+    /* ── ornamental divider ────────────────────────── */
+    .orn {
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; margin: 28px auto; color: var(--gold);
+    }
+    .orn-line {
+      flex: 1; max-width: 160px; height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold-lt), transparent);
+    }
+    .orn-sym { font-size: 1.1rem; line-height: 1; }
+
+    /* ══════════════════════════════════════════════
+       STORY SECTION — unified container
+    ══════════════════════════════════════════════ */
+    .story-section {
+      background: rgba(245, 237, 204, 0.28);
+      border-top: 1px solid rgba(139,98,20,0.18);
+      border-bottom: 1px solid rgba(139,98,20,0.18);
+      padding-bottom: 64px;
+      margin-top: 8px;
+    }
+
+    .parker-row {
+      max-width: 980px; margin: 0 auto;
+      padding: 44px 28px 32px;
+    }
+
+    /* ══════════════════════════════════════════════
+       CHAPTER HEADINGS — soft section labels
+    ══════════════════════════════════════════════ */
+    .ch-wrap { max-width: 980px; margin: 0 auto; padding: 0 28px; }
+
+    .ch-head {
+      margin: 48px 0 22px;
+    }
+    .ch-title {
+      font-size: 1.6rem;
+      font-weight: normal;
+      font-style: italic;
+      color: var(--ink-dk);
+      padding-bottom: 9px;
+      border-bottom: 1px solid rgba(139,98,20,0.28);
+      display: block;
+    }
+
+    /* ══════════════════════════════════════════════
+       HERO
+    ══════════════════════════════════════════════ */
+    .hero {
+      text-align: center;
+      padding: 52px 24px 36px;
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
+    .hero-anniversary {
+      font-size: 0.75rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .hero-page-title {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: normal;
+      color: var(--ink-dk);
+      letter-spacing: 0.03em;
+      margin-bottom: 6px;
+    }
+
+    .hero-era {
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--ink-lt);
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+
+    .hero-date {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-lt);
+      opacity: 0.8;
+      margin-bottom: 18px;
+    }
+
+    .hero-intro {
+      font-size: 0.94rem;
+      font-style: italic;
+      color: var(--ink-md);
+      line-height: 1.82;
+      max-width: 680px;
+      margin: 0 auto 6px;
+    }
+
+    /* Parker portrait + quote two-column */
+    .parker-block {
+      display: flex;
+      align-items: flex-start;
+      gap: 28px;
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .parker-img-wrap {
+      flex-shrink: 0;
+      text-align: center;
+    }
+
+    .parker-img {
+      width: 130px;
+      border: 2px solid var(--gold);
+      box-shadow: 3px 4px 14px rgba(60,30,0,0.28);
+      display: block;
+      filter: sepia(18%);
+    }
+
+    .parker-caption {
+      font-size: 0.72rem;
+      font-style: italic;
+      color: var(--ink-lt);
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+
+    /* British soldiers image alongside context */
+    .ctx-with-img {
+      display: flex;
+      align-items: flex-start;
+      gap: 28px;
+    }
+    .ctx-with-img .ctx-full {
+      flex: 1;
+    }
+    .battle-img-wrap {
+      flex-shrink: 0;
+      text-align: center;
+      width: 200px;
+    }
+    .battle-img {
+      width: 200px;
+      border: 2px solid var(--gold);
+      box-shadow: 3px 4px 14px rgba(60,30,0,0.28);
+      display: block;
+      filter: sepia(15%);
+    }
+    .battle-caption {
+      font-size: 0.72rem;
+      font-style: italic;
+      color: var(--ink-lt);
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+
+    .parker-quote {
+      border-left: 2px solid var(--gold-lt);
+      padding: 14px 0 14px 22px;
+      align-self: center;
+    }
+    .parker-quote p {
+      font-size: 1.02rem;
+      font-style: italic;
+      color: var(--ink-md);
+      line-height: 1.78;
+      margin-bottom: 9px;
+    }
+    .parker-quote cite {
+      font-size: 0.78rem;
+      color: var(--ink-lt);
+      font-style: normal;
+    }
+
+    /* ══════════════════════════════════════════════
+       CONTEXT CARDS
+    ══════════════════════════════════════════════ */
+    .ctx-section { padding: 28px 0 48px; }
+
+    .ctx-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-bottom: 22px;
+    }
+
+    .ctx-card, .ctx-full {
+      background: var(--cream);
+      border: 1px solid var(--gold);
+      border-top: 3px solid var(--gold);
+      padding: 24px 26px;
+    }
+
+    .ctx-head {
+      display: flex; align-items: center; gap: 9px;
+      font-size: 0.76rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-dk);
+      margin-bottom: 12px;
+    }
+    .ctx-head svg { flex-shrink: 0; }
+
+    .ctx-card p, .ctx-full p {
+      font-size: 0.96rem;
+      font-style: italic;
+      line-height: 1.8;
+      color: var(--ink-md);
+    }
+
+    /* ══════════════════════════════════════════════
+       MAP
+    ══════════════════════════════════════════════ */
+    .map-section { padding: 28px 0 52px; text-align: center; }
+
+    .sec-head {
+      display: flex; align-items: center; gap: 16px;
+      max-width: 980px; margin: 0 auto 20px; padding: 0 28px;
+    }
+    .sec-head-line { flex: 1; height: 1px; background: linear-gradient(to right, transparent, var(--gold-lt), transparent); }
+    .sec-head h2 {
+      font-size: 1rem; font-weight: normal; font-style: italic;
+      color: var(--ink-lt); white-space: nowrap; letter-spacing: 0.1em;
+    }
+
+    #map-container {
+      display: inline-block;
+      box-shadow: 0 8px 36px rgba(80,50,10,0.35), 0 0 0 3px #8b6214, 0 0 0 7px #c8a840;
+      border-radius: 2px;
+    }
+    #map { display: block; }
+
+    .map-caption {
+      margin-top: 12px;
+      font-size: 0.8rem; font-style: italic;
+      color: var(--ink-lt); opacity: 0.75;
+    }
+
+    /* ══════════════════════════════════════════════
+       STATS
+    ══════════════════════════════════════════════ */
+    .stats-section { padding: 28px 0 60px; }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 0;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .stat-card {
+      background: var(--cream);
+      border: 1px solid var(--gold);
+      padding: 26px 20px 22px;
+      text-align: center;
+      position: relative;
+      box-shadow: 2px 4px 18px rgba(60,30,0,0.13);
+    }
+    .stat-card::after {
+      content: '';
+      position: absolute; inset: 6px;
+      border: 1px solid rgba(139,98,20,0.22);
+      pointer-events: none;
+    }
+
+    .stat-icon { display: block; margin: 0 auto 12px; }
+
+    .stat-title {
+      font-size: 0.72rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .stat-title-sub {
+      font-size: 0.76rem; font-style: italic;
+      color: var(--ink-lt); margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    .stat-row {
+      display: flex; justify-content: space-around; gap: 8px;
+      margin-bottom: 10px;
+    }
+    .stat-col { flex: 1; }
+
+    .stat-col-label {
+      font-size: 0.68rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--ink-lt);
+      margin-bottom: 4px;
+    }
+
+    .stat-num {
+      font-size: 2.5rem; line-height: 1;
+      color: var(--ink-dk); margin-bottom: 4px;
+    }
+    .stat-num.br { color: var(--red); }
+    .stat-num.am { color: var(--blue); }
+
+    .stat-lbl {
+      font-size: 0.72rem; font-style: italic;
+      color: var(--ink-lt); line-height: 1.45;
+    }
+
+    .stat-hr {
+      border: none; border-top: 1px solid rgba(139,98,20,0.28);
+      margin: 12px 0;
+    }
+
+    .stat-body {
+      font-size: 0.86rem; font-style: italic;
+      color: var(--ink-md); line-height: 1.65;
+      text-align: left;
+    }
+    .stat-body ul { list-style: none; padding: 0 4px; }
+    .stat-body ul li::before { content: '✦  '; color: var(--gold); font-size: 0.65rem; }
+    .stat-body ul li { margin-bottom: 5px; }
+
+    .stat-big {
+      font-size: 2.4rem; color: var(--ink-dk);
+      line-height: 1; margin-bottom: 2px;
+    }
+
+    /* breakdown row inside casualty card */
+    .cas-row {
+      display: flex; justify-content: space-between;
+      font-size: 0.74rem; font-style: italic;
+      color: var(--ink-lt); margin-top: 4px;
+    }
+    .cas-row span { flex: 1; text-align: center; }
+
+    /* ══════════════════════════════════════════════
+       EMERSON QUOTE
+    ══════════════════════════════════════════════ */
+    .emerson-section { padding: 28px 0 68px; text-align: center; }
+
+    .emerson-q {
+      display: inline-block; max-width: 520px;
+      padding: 32px 44px;
+      background: var(--cream);
+      border: 1px solid var(--gold);
+      position: relative;
+    }
+    .emerson-q::after {
+      content: '';
+      position: absolute; inset: 6px;
+      border: 1px solid rgba(139,98,20,0.2);
+      pointer-events: none;
+    }
+    .emerson-q p {
+      font-size: 1.15rem; font-style: italic;
+      color: var(--ink-md); line-height: 2.1;
+      margin-bottom: 16px;
+    }
+    .emerson-q cite {
+      font-size: 0.8rem; color: var(--ink-lt);
+      font-style: normal; letter-spacing: 0.04em;
+    }
+
+    /* ══════════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════════ */
+    .page-footer {
+      border-top: 1px solid rgba(139,98,20,0.3);
+      padding: 26px 24px; text-align: center;
+      font-size: 0.77rem; font-style: italic;
+      color: var(--ink-lt); line-height: 1.9;
+    }
+
+    /* ── Map SVG classes (unchanged from original) ─ */
+    .river       { fill:none; stroke:#5d8fac; stroke-width:2; stroke-opacity:0.55; }
+    .harbor      { fill:#8cb8d0; fill-opacity:0.32; stroke:#5d8fac; stroke-width:1; stroke-opacity:0.45; }
+    .location-dot{ fill:#3a200e; stroke:#7a5020; stroke-width:1; }
+    .location-label      { font-family:'IM Fell English',serif; font-size:11px; fill:#2c1608; pointer-events:none; }
+    .location-label.major{ font-size:13px; font-weight:bold; }
+    .route-revere          { fill:none; stroke:#1a3a6b; stroke-width:2.5; }
+    .route-prescott        { fill:none; stroke:#2e78c8; stroke-width:2.2; }
+    .route-british-advance { fill:none; stroke:#8b1a1a; stroke-width:3; }
+    .route-british-retreat { fill:none; stroke:#8b1a1a; stroke-width:2; stroke-opacity:0.5; }
+    .route-militia         { fill:none; stroke:#2d5a27; stroke-width:2; }
+    .ann-bg   { fill:rgba(253,248,226,0.95); stroke:#8b6214; stroke-width:1; }
+    .ann-line1{ font-family:'IM Fell English',serif; font-size:12.5px; font-weight:bold; fill:#1e0804; }
+    .ann-line2{ font-family:'IM Fell English',serif; font-size:11.5px; font-style:italic; fill:#3a1608; }
+    .ann-hero { font-family:'IM Fell English',serif; font-size:14px; font-weight:bold; fill:#6b0000; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════
+     HERO — page identity & introduction
+══════════════════════════════════════════════════════ -->
+<header class="hero">
+
+  <!-- Crossed muskets emblem -->
+  <svg viewBox="0 0 130 64" width="110" height="55" aria-hidden="true" style="display:block;margin:0 auto 16px;">
+    <line x1="8" y1="54" x2="62" y2="10" stroke="#8b6214" stroke-width="4" stroke-linecap="round"/>
+    <polygon points="62,10 55,8 58,16" fill="#8b6214"/>
+    <ellipse cx="7" cy="56" rx="9" ry="4.5" transform="rotate(-42,7,56)" fill="#8b6214"/>
+    <line x1="122" y1="54" x2="68" y2="10" stroke="#8b6214" stroke-width="4" stroke-linecap="round"/>
+    <polygon points="68,10 72,8 75,16" fill="#8b6214"/>
+    <ellipse cx="123" cy="56" rx="9" ry="4.5" transform="rotate(42,123,56)" fill="#8b6214"/>
+    <circle cx="65" cy="32" r="14" fill="rgba(253,248,226,0.92)" stroke="#8b6214" stroke-width="1.3"/>
+    <text x="65" y="38" text-anchor="middle" font-size="16" fill="#8b6214" font-family="serif">✦</text>
+  </svg>
+
+  <p class="hero-anniversary">Massachusetts &nbsp;·&nbsp; 250th Anniversary</p>
+  <h1 class="hero-page-title">Concord Through Time</h1>
+  <p class="hero-date">Battles of Lexington &amp; Concord &nbsp;·&nbsp; April 18–19, 1775</p>
+
+  <div class="orn" style="max-width:400px;">
+    <div class="orn-line"></div>
+    <span class="orn-sym">★</span>
+    <div class="orn-line"></div>
+  </div>
+
+  <p class="hero-intro">
+    The goal of this project is to show that Concord's legacy extends far beyond its role in American
+    history by highlighting how the town has continued to grow through preservation efforts, recreation,
+    tourism, and community leadership. This project aims to present Concord not only as a historic town,
+    but as a living example of how history and civic identity continue to shape one another over time.
+  </p>
+
+
+</header>
+
+<!-- ══════════════════════════════════════════════════════
+     STORY SECTION — Parker quote through stats
+══════════════════════════════════════════════════════ -->
+<section class="story-section">
+
+  <!-- The Night of April 18 -->
+  <div class="wrap">
+    <div class="ch-head">
+      <h2 class="ch-title">The Night of April 18, 1775</h2>
+    </div>
+    <div class="ctx-with-img">
+      <div class="ctx-full fi">
+        <p>On the night of April 18, 1775, Lt. Colonel Francis Smith led approximately 700 British Regulars out of Boston under cover of darkness, ordered to march on Concord and destroy the colonial militia's hidden stores of arms — a mission meant to crush any rebellion before it could take root. To counter the threat, Paul Revere, William Dawes, and Samuel Prescott rode through the night to rouse the countryside; Revere was seized by a British patrol near Lincoln, but Prescott escaped, leaping his horse over a stone wall and galloping on to warn Concord in time. At dawn on Lexington Green, Captain John Parker's 77 Minutemen stood their ground before the advancing column — a single disputed shot sparked a volley that killed eight colonists — yet by midmorning hundreds of Minutemen from more than a dozen towns had converged on North Bridge, fired back, and forced the Redcoats into a desperate 15-mile fighting retreat to Boston. The American Revolution had begun.</p>
+      </div>
+      <div class="battle-img-wrap fi d1">
+        <img
+          src="../proposal photos/British_mfers.jpg"
+          alt="British Redcoat soldiers, American Revolutionary War era"
+          class="battle-img"
+        />
+        <p class="battle-caption">British Regular infantry<br><em>Lt. Col. Smith's expedition, April 1775</em></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Battle Unfolds (map) -->
+  <div class="ch-wrap">
+    <div class="ch-head">
+      <h2 class="ch-title">The Battle Unfolds</h2>
+    </div>
+  </div>
+
+  <div style="text-align:center; padding: 0 0 8px;">
+    <div class="sec-head" style="margin-top:0;">
+      <div class="sec-head-line"></div>
+      <h2>Follow the routes, the riders, and the fight</h2>
+      <div class="sec-head-line"></div>
+    </div>
+    <div id="map-container">
+      <svg id="map" width="950" height="600"></svg>
+    </div>
+    <p class="map-caption">Animation loops every 65 seconds &nbsp;·&nbsp; Scroll back up to replay from the beginning</p>
+
+    <!-- Parker portrait + quote -->
+    <div class="parker-row" style="text-align:left;">
+      <div class="parker-block">
+        <div class="parker-img-wrap">
+          <img
+            src="../proposal photos/John_Parker.jpg"
+            alt="Portrait of Captain John Parker"
+            class="parker-img"
+          />
+          <p class="parker-caption">Captain John Parker<br><em>Commander, Lexington Militia</em></p>
+        </div>
+        <blockquote class="parker-quote">
+          <p>"Stand your ground. Don't fire unless fired upon,<br>
+             but if they mean to have a war, let it begin here."</p>
+          <cite>— Captain John Parker, addressing his 77 Minutemen, dawn of April 19, 1775</cite>
+        </blockquote>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Forces & Casualties -->
+  <div class="wrap">
+    <div class="ch-head">
+      <h2 class="ch-title">April 19, 1775 — Forces &amp; Casualties</h2>
+    </div>
+
+    <div class="stats-grid">
+
+      <!-- FORCES -->
+      <div class="stat-card fi">
+        <svg class="stat-icon" viewBox="0 0 76 40" width="76" height="40" aria-hidden="true">
+          <g stroke="#8b1a1a" stroke-linecap="round">
+            <rect x="7" y="1" width="10" height="4" rx="0.5" fill="#8b1a1a" stroke="none"/>
+            <circle cx="12" cy="9" r="4.5" fill="#8b1a1a" stroke="none"/>
+            <rect x="8" y="13" width="8" height="11" rx="1" fill="#8b1a1a" stroke="none"/>
+            <line x1="10" y1="24" x2="8"  y2="38" stroke-width="3"/>
+            <line x1="14" y1="24" x2="16" y2="38" stroke-width="3"/>
+            <line x1="8"  y1="16" x2="2"  y2="19" stroke-width="2"/>
+            <line x1="16" y1="16" x2="22" y2="13" stroke-width="2"/>
+            <line x1="22" y1="13" x2="26" y2="6"  stroke-width="1.5"/>
+          </g>
+          <g stroke="#1a3a6b" stroke-linecap="round">
+            <polygon points="52,1 46,7 58,7" fill="#1a3a6b" stroke="none"/>
+            <rect x="46" y="5" width="12" height="3" rx="0" fill="#1a3a6b" stroke="none"/>
+            <circle cx="52" cy="13" r="4.5" fill="#1a3a6b" stroke="none"/>
+            <rect x="48" y="17" width="8" height="11" rx="1" fill="#1a3a6b" stroke="none"/>
+            <line x1="50" y1="28" x2="48" y2="40" stroke-width="3"/>
+            <line x1="54" y1="28" x2="56" y2="40" stroke-width="3"/>
+            <line x1="48" y1="20" x2="42" y2="23" stroke-width="2"/>
+            <line x1="56" y1="20" x2="62" y2="17" stroke-width="2"/>
+            <line x1="62" y1="17" x2="66" y2="10" stroke-width="1.5"/>
+          </g>
+        </svg>
+
+        <p class="stat-title">Troops in the Field</p>
+        <p class="stat-title-sub">Total combatants engaged on April 19</p>
+
+        <div class="stat-row">
+          <div class="stat-col">
+            <div class="stat-col-label" style="color:var(--red);">British</div>
+            <div class="stat-num br" data-count="700">700</div>
+            <div class="stat-lbl">Regulars marching<br>from Boston</div>
+          </div>
+          <div class="stat-col">
+            <div class="stat-col-label" style="color:var(--blue);">Colonial Militia</div>
+            <div class="stat-num am"><span data-count="3960">3,960</span>+</div>
+            <div class="stat-lbl">Minutemen from<br>15+ MA towns</div>
+          </div>
+        </div>
+
+        <hr class="stat-hr"/>
+        <p class="stat-body" style="text-align:center;">
+          Militia from Acton, Bedford, Lincoln, Woburn, Sudbury, Billerica, Chelmsford and others answered the alarm — outnumbering the British more than five to one by day's end.
+        </p>
+      </div>
+
+      <!-- CASUALTIES -->
+      <div class="stat-card fi d1">
+        <svg class="stat-icon" viewBox="0 0 48 48" width="44" height="44" aria-hidden="true">
+          <line x1="6" y1="42" x2="42" y2="6"  stroke="#3a1f08" stroke-width="2.8" stroke-linecap="round"/>
+          <line x1="42" y1="42" x2="6" y2="6"  stroke="#3a1f08" stroke-width="2.8" stroke-linecap="round"/>
+          <line x1="20" y1="20" x2="28" y2="20" stroke="#3a1f08" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="20" y1="28" x2="28" y2="28" stroke="#3a1f08" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+
+        <p class="stat-title">Battle Casualties</p>
+        <p class="stat-title-sub">Killed, wounded &amp; missing — both sides</p>
+
+        <!-- British -->
+        <div style="margin-bottom:10px;">
+          <div class="stat-col-label" style="color:var(--red); text-align:center; margin-bottom:4px;">British Regulars</div>
+          <div class="stat-num br" style="font-size:2.1rem;" data-count="273">273</div>
+          <div class="stat-lbl" style="text-align:center;">total casualties</div>
+          <div class="cas-row" style="margin-top:6px;">
+            <span>73 killed</span>
+            <span>174 wounded</span>
+            <span>26 missing</span>
+          </div>
+        </div>
+
+        <hr class="stat-hr"/>
+
+        <!-- American -->
+        <div>
+          <div class="stat-col-label" style="color:var(--blue); text-align:center; margin-bottom:4px;">Colonial Militia</div>
+          <div class="stat-num am" style="font-size:2.1rem;" data-count="93">93</div>
+          <div class="stat-lbl" style="text-align:center;">total casualties</div>
+          <div class="cas-row" style="margin-top:6px;">
+            <span>49 killed</span>
+            <span>39 wounded</span>
+            <span>5 missing</span>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION IV — THE LEGACY
+══════════════════════════════════════════════════════ -->
+<section class="emerson-section">
+  <div class="wrap">
+
+    <div class="ch-head">
+      <h2 class="ch-title">The Words That Endure</h2>
+    </div>
+
+    <div class="orn" style="margin-top:8px;">
+      <div class="orn-line"></div>
+      <span class="orn-sym">✦</span>
+      <div class="orn-line"></div>
+    </div>
+
+    <blockquote class="emerson-q fi">
+      <p>
+        By the rude bridge that arch'd the flood,<br>
+        Their flag to April's breeze unfurl'd,<br>
+        Here once the embattled farmers stood,<br>
+        And fired the shot heard round the world.
+      </p>
+      <cite>— Ralph Waldo Emerson, <em>Concord Hymn</em>, 1837<br>
+      Written for the dedication of the Obelisk at Concord's North Bridge</cite>
+    </blockquote>
+
+    <div class="orn">
+      <div class="orn-line"></div>
+      <span class="orn-sym">✦</span>
+      <div class="orn-line"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════ -->
+<footer class="page-footer">
+  <p>Visualization by William Martinez &nbsp;·&nbsp; CS617 Data Visualization</p>
+  <p>Sources: Minute Man National Historical Park &nbsp;·&nbsp; National Park Service &nbsp;·&nbsp; U.S. Census Bureau</p>
+</footer>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+/* ══════════════════════════════════════════════════════
+   SCROLL ANIMATIONS
+══════════════════════════════════════════════════════ */
+const fadeObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fi').forEach(el => fadeObs.observe(el));
+
+function countUp(el, target, delay) {
+  setTimeout(() => {
+    const dur = 1700;
+    const start = performance.now();
+    const tick = now => {
+      const p = Math.min((now - start) / dur, 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(ease * target).toLocaleString();
+      if (p < 1) requestAnimationFrame(tick);
+      else el.textContent = target.toLocaleString();
+    };
+    requestAnimationFrame(tick);
+  }, delay);
+}
+
+let countDone = false;
+const countObs = new IntersectionObserver(entries => {
+  if (countDone || !entries[0].isIntersecting) return;
+  countDone = true;
+  document.querySelectorAll('[data-count]').forEach((el, i) => {
+    countUp(el, parseInt(el.dataset.count), i * 220);
+  });
+}, { threshold: 0.25 });
+const sg = document.querySelector('.stats-grid');
+if (sg) countObs.observe(sg);
+
+/* ══════════════════════════════════════════════════════
+   D3 MAP — original logic unchanged
+══════════════════════════════════════════════════════ */
+const W = 950, H = 600;
+const TOTAL = 62000;
+const LOOP_PAUSE = 3000;
+
+const projection = d3.geoMercator()
+  .center([-71.235, 42.432])
+  .scale(133000)
+  .translate([W/2, H/2 - 10]);
+
+const geoPath = d3.geoPath().projection(projection);
+function proj(c){ return projection(c); }
+
+const svg  = d3.select("#map");
+const defs = svg.append("defs");
+
+const pg = defs.append("radialGradient").attr("id","parchGrad")
+  .attr("cx","48%").attr("cy","44%").attr("r","65%");
+pg.append("stop").attr("offset","0%").attr("stop-color","#faf3df");
+pg.append("stop").attr("offset","55%").attr("stop-color","#ecdfa8");
+pg.append("stop").attr("offset","100%").attr("stop-color","#c8a840").attr("stop-opacity","0.85");
+
+const vg = defs.append("radialGradient").attr("id","vigGrad")
+  .attr("cx","50%").attr("cy","50%").attr("r","70%");
+vg.append("stop").attr("offset","55%").attr("stop-color","transparent");
+vg.append("stop").attr("offset","100%").attr("stop-color","rgba(60,30,0,0.3)");
+
+const filt = defs.append("filter").attr("id","paper")
+  .attr("x","0%").attr("y","0%").attr("width","100%").attr("height","100%");
+filt.append("feTurbulence").attr("type","fractalNoise").attr("baseFrequency","0.70")
+  .attr("numOctaves","4").attr("stitchTiles","stitch").attr("result","noise");
+filt.append("feColorMatrix").attr("in","noise").attr("type","saturate").attr("values","0").attr("result","gray");
+filt.append("feBlend").attr("in","SourceGraphic").attr("in2","gray").attr("mode","multiply").attr("result","blend");
+filt.append("feComposite").attr("in","blend").attr("in2","SourceGraphic").attr("operator","in");
+
+const mapG = svg.append("g").style("opacity",0);
+mapG.append("rect").attr("width",W).attr("height",H).attr("fill","url(#parchGrad)").attr("filter","url(#paper)");
+mapG.append("rect").attr("width",W).attr("height",H).attr("fill","url(#vigGrad)").attr("pointer-events","none");
+[{x:8,sw:2},{x:14,sw:0.7}].forEach(b=>{
+  mapG.append("rect").attr("x",b.x).attr("y",b.x).attr("width",W-2*b.x).attr("height",H-2*b.x)
+    .attr("fill","none").attr("stroke","#8b6214").attr("stroke-width",b.sw);
+});
+
+const ttl = mapG.append("g").attr("transform","translate(26,30)");
+ttl.append("text").attr("class","location-label major").attr("font-size","17px").attr("fill","#1e0a04")
+  .text("Battles of Lexington & Concord");
+ttl.append("text").attr("class","location-label").attr("y",20).attr("font-size","12px")
+  .attr("fill","#5a3010").attr("font-style","italic").text("April 18–19, 1775");
+ttl.append("line").attr("x1",0).attr("y1",28).attr("x2",220).attr("y2",28)
+  .attr("stroke","#8b6214").attr("stroke-width",0.8);
+
+const cmp = mapG.append("g").attr("transform",`translate(${W-52},46)`);
+cmp.append("text").attr("text-anchor","middle").attr("y",-8).attr("font-size","11px")
+  .attr("fill","#2c1008").attr("font-family","'IM Fell English',serif").text("N");
+cmp.append("line").attr("x1",0).attr("y1",-5).attr("x2",0).attr("y2",14).attr("stroke","#2c1008").attr("stroke-width",1.5);
+cmp.append("polygon").attr("points","0,-5 -4,5 0,3 4,5").attr("fill","#2c1008");
+cmp.append("line").attr("x1",-10).attr("y1",4).attr("x2",10).attr("y2",4).attr("stroke","#2c1008").attr("stroke-width",1);
+
+mapG.append("path").datum({type:"Polygon",coordinates:[[
+  [-71.055,42.330],[-71.030,42.328],[-71.010,42.342],[-70.998,42.358],
+  [-71.008,42.374],[-71.030,42.384],[-71.055,42.380],[-71.062,42.370],
+  [-71.058,42.358],[-71.055,42.330]
+]]}).attr("d",geoPath).attr("class","harbor");
+
+mapG.append("path").datum({type:"LineString",coordinates:[
+  [-71.055,42.361],[-71.078,42.358],[-71.098,42.354],[-71.115,42.352],
+  [-71.132,42.357],[-71.150,42.363],[-71.168,42.368],[-71.200,42.372],
+  [-71.232,42.375],[-71.252,42.377]
+]}).attr("d",geoPath).attr("class","river");
+
+mapG.append("path").datum({type:"LineString",coordinates:[
+  [-71.060,42.379],[-71.072,42.389],[-71.090,42.397],[-71.108,42.419],[-71.118,42.430]
+]}).attr("d",geoPath).attr("class","river").attr("stroke-width","1.4");
+
+mapG.append("path").datum({type:"LineString",coordinates:[
+  [-71.352,42.436],[-71.358,42.455],[-71.361,42.469],[-71.359,42.490],[-71.354,42.512]
+]}).attr("d",geoPath).attr("class","river").attr("stroke-width","1.4");
+
+const locations = [
+  {name:"Boston",       c:[-71.0589,42.3601],dx:7,  dy:4,   major:true },
+  {name:"Charlestown",  c:[-71.0606,42.3776],dx:7,  dy:-5,  major:false},
+  {name:"Cambridge",    c:[-71.1056,42.3736],dx:7,  dy:11,  major:false},
+  {name:"Medford",      c:[-71.1067,42.4184],dx:7,  dy:-5,  major:false},
+  {name:"Menotomy",     c:[-71.1534,42.4150],dx:-8, dy:-7,  major:false,anchor:"end"},
+  {name:"Lexington",    c:[-71.2292,42.4473],dx:7,  dy:-6,  major:true },
+  {name:"Lincoln",      c:[-71.2998,42.4248],dx:7,  dy:11,  major:false},
+  {name:"Concord",      c:[-71.3495,42.4600],dx:-8, dy:-6,  major:true, anchor:"end"},
+  {name:"North Bridge", c:[-71.3607,42.4693],dx:-8, dy:11,  major:false,anchor:"end"},
+  {name:"Acton",        c:[-71.4328,42.4851],dx:7,  dy:-7,  major:false},
+  {name:"Bedford",      c:[-71.2762,42.4931],dx:7,  dy:-5,  major:false},
+  {name:"Woburn",       c:[-71.1523,42.4793],dx:7,  dy:-5,  major:false},
+];
+const locG   = mapG.append("g");
+const locEls = locations.map(loc=>{
+  const [x,y]=proj(loc.c);
+  const g=locG.append("g").style("opacity",0);
+  g.append("circle").attr("cx",x).attr("cy",y).attr("r",loc.major?5:3.5).attr("class","location-dot");
+  g.append("text").attr("x",x+loc.dx).attr("y",y+loc.dy)
+    .attr("text-anchor",loc.anchor||"start")
+    .attr("class",`location-label${loc.major?" major":""}`)
+    .text(loc.name);
+  return g;
+});
+
+const routeG = mapG.append("g");
+function animPath(coords, cls){
+  const el=routeG.append("path")
+    .datum({type:"LineString",coordinates:coords})
+    .attr("d",geoPath).attr("class",cls);
+  const len=el.node().getTotalLength();
+  el.attr("stroke-dasharray",len).attr("stroke-dashoffset",len);
+  return {el,len};
+}
+
+const rRevere = animPath([
+  [-71.054,42.366],[-71.060,42.379],[-71.074,42.392],
+  [-71.090,42.404],[-71.107,42.419],[-71.135,42.418],
+  [-71.153,42.415],[-71.184,42.428],[-71.222,42.447]
+],"route-revere");
+
+const rPrescott = animPath([
+  [-71.255,42.443],[-71.275,42.450],[-71.300,42.456],
+  [-71.325,42.462],[-71.350,42.460]
+],"route-prescott");
+
+const _p1tmp = routeG.append("path")
+  .datum({type:"LineString",coordinates:[
+    [-71.068,42.354],[-71.095,42.354],[-71.115,42.360],
+    [-71.132,42.368],[-71.153,42.415],[-71.190,42.432],
+    [-71.222,42.447],[-71.255,42.443]
+  ]}).attr("d",geoPath);
+const L_P1 = _p1tmp.node().getTotalLength();
+_p1tmp.remove();
+
+const rBritish = animPath([
+  [-71.068,42.354],[-71.095,42.354],[-71.115,42.360],
+  [-71.132,42.368],[-71.153,42.415],[-71.190,42.432],
+  [-71.222,42.447],[-71.255,42.443],[-71.260,42.444],
+  [-71.300,42.435],[-71.330,42.450],[-71.350,42.460]
+],"route-british-advance");
+
+const rMilitia=[
+  [[-71.433,42.485],[-71.410,42.477],[-71.361,42.469]],
+  [[-71.276,42.493],[-71.318,42.483],[-71.352,42.475],[-71.361,42.469]],
+  [[-71.300,42.425],[-71.330,42.445],[-71.350,42.460],[-71.361,42.469]],
+  [[-71.152,42.479],[-71.220,42.484],[-71.290,42.480],[-71.361,42.469]],
+].map(c=>animPath(c,"route-militia"));
+
+const rMinuteFollow = animPath([
+  [-71.350,42.460],[-71.330,42.450],[-71.300,42.435],
+  [-71.260,42.444],[-71.222,42.447],[-71.190,42.432],
+  [-71.153,42.415],[-71.132,42.368],[-71.095,42.354],
+  [-71.068,42.354]
+],"route-militia");
+
+const capPos  = proj([-71.255,42.443]);
+const capMark = mapG.append("g").style("opacity",0);
+capMark.append("text").attr("x",capPos[0]).attr("y",capPos[1]+5)
+  .attr("text-anchor","middle").attr("font-size","20px").attr("font-weight","bold")
+  .attr("fill","#8b1a1a").attr("font-family","sans-serif").text("✕");
+
+const capRing1 = mapG.append("circle").attr("cx",capPos[0]).attr("cy",capPos[1])
+  .attr("r",0).attr("fill","none").attr("stroke","#8b1a1a").attr("stroke-width",2).style("opacity",0);
+const capRing2 = mapG.append("circle").attr("cx",capPos[0]).attr("cy",capPos[1])
+  .attr("r",0).attr("fill","none").attr("stroke","#8b1a1a").attr("stroke-width",1.2).style("opacity",0);
+
+const lexPos   = proj([-71.222,42.447]);
+const lexFlash = mapG.append("circle").attr("cx",lexPos[0]).attr("cy",lexPos[1])
+  .attr("r",0).attr("fill","rgba(180,40,40,0.65)").style("opacity",0);
+
+const nbPos  = proj([-71.361,42.469]);
+const nbRing = mapG.append("circle").attr("cx",nbPos[0]).attr("cy",nbPos[1])
+  .attr("r",0).attr("fill","none").attr("stroke","#8b1a1a").attr("stroke-width",2.5).style("opacity",0);
+const nbDot  = mapG.append("circle").attr("cx",nbPos[0]).attr("cy",nbPos[1])
+  .attr("r",0).attr("fill","#8b1a1a").style("opacity",0);
+
+function makeAnn(refCoords, ox, oy, line1, line2, boxW, heroStyle){
+  const [rx,ry]=proj(refCoords);
+  const bx=rx+ox, by=ry+oy;
+  const bh=heroStyle?54:48;
+  const g=mapG.append("g").style("opacity",0);
+  g.append("rect").attr("x",bx).attr("y",by).attr("width",boxW).attr("height",bh)
+    .attr("rx",3).attr("ry",3).attr("class","ann-bg");
+  if(heroStyle){
+    g.append("text").attr("x",bx+boxW/2).attr("y",by+20).attr("text-anchor","middle").attr("class","ann-hero").text(line1);
+    g.append("text").attr("x",bx+boxW/2).attr("y",by+40).attr("text-anchor","middle").attr("class","ann-line2").text(line2);
+  } else {
+    g.append("text").attr("x",bx+10).attr("y",by+18).attr("class","ann-line1").text(line1);
+    g.append("text").attr("x",bx+10).attr("y",by+36).attr("class","ann-line2").text(line2);
+  }
+  return g;
+}
+
+const annTarget    = makeAnn([-71.350,42.460], 14, 14,  "British target: Concord","They march to seize colonial arms & powder", 248, false);
+const annRevere    = makeAnn([-71.058,42.360], -228, -60, "11:00 PM — Paul Revere departs Boston","Riding to warn Lexington & Concord", 232, false);
+const annBritish   = makeAnn([-71.160,42.440], -220, 18,  "700 British Regulars march for Concord","to seize the colonial arms depot", 226, false);
+const annCapture   = makeAnn([-71.255,42.443], 14, -58,  "1:00 AM — Revere is captured","near Lincoln, Massachusetts", 210, false);
+const annPrescott  = makeAnn([-71.300,42.456], 12, -62,  "Samuel Prescott escapes!","He rides on to warn Concord", 210, false);
+const annLexington = makeAnn([-71.222,42.447], 10, 24,   "Dawn, April 19 — First shots fired","at Lexington Green", 210, false);
+const annMilitia   = makeAnn([-71.420,42.375], 10, 0,    "The alarm spreads —","Minutemen from all towns respond", 200, false);
+const annNorthBridge = makeAnn([-71.361,42.469], 18, -68, "“The Shot Heard Round the World”","North Bridge, Concord — 7:00 AM", 245, true);
+const annRetreat   = makeAnn([-71.160,42.440], -220, 18,  "The British retreat —","a 15-mile running battle begins", 212, false);
+
+const ccW = 400, ccH = 76;
+const ccX = W/2 - ccW/2, ccY = H/2 - ccH/2 + 10;
+const closingCard = mapG.append("g").style("opacity", 0);
+closingCard.append("rect")
+  .attr("x",ccX).attr("y",ccY).attr("width",ccW).attr("height",ccH)
+  .attr("rx",4).attr("ry",4)
+  .attr("fill","rgba(253,248,226,0.97)")
+  .attr("stroke","#8b6214").attr("stroke-width",1.8);
+closingCard.append("line")
+  .attr("x1",ccX+16).attr("y1",ccY+ccH/2)
+  .attr("x2",ccX+ccW-16).attr("y2",ccY+ccH/2)
+  .attr("stroke","#c8a840").attr("stroke-width",0.6);
+closingCard.append("text")
+  .attr("x",W/2).attr("y",ccY+24).attr("text-anchor","middle")
+  .attr("font-family","'IM Fell English',serif")
+  .attr("font-size","15px").attr("font-weight","bold").attr("fill","#1e0804")
+  .text("The Minutemen force the British back to Boston.");
+closingCard.append("text")
+  .attr("x",W/2).attr("y",ccY+54).attr("text-anchor","middle")
+  .attr("font-family","'IM Fell English',serif")
+  .attr("font-size","13px").attr("font-style","italic").attr("fill","#4a1a04")
+  .text("The American Revolution has begun — April 19, 1775.");
+
+const LEG_X = W - 216, LEG_Y = 68;
+const legG = mapG.append("g").attr("transform",`translate(${LEG_X},${LEG_Y})`);
+legG.append("rect").attr("x",-8).attr("y",-8).attr("width",208).attr("height",112)
+  .attr("fill","rgba(253,248,226,0.92)").attr("stroke","#8b6214").attr("stroke-width",1);
+[
+  {label:"Paul Revere's Ride",     stroke:"#1a3a6b",sw:2.5,y:10},
+  {label:"Samuel Prescott's Ride", stroke:"#2e78c8",sw:2.2,y:32},
+  {label:"British Forces",         stroke:"#8b1a1a",sw:3,  y:54},
+  {label:"Minutemen Response",     stroke:"#2d5a27",sw:2,  y:76},
+].forEach(item=>{
+  legG.append("line").attr("x1",0).attr("y1",item.y).attr("x2",28).attr("y2",item.y)
+    .attr("stroke",item.stroke).attr("stroke-width",item.sw);
+  legG.append("text").attr("x",36).attr("y",item.y+4).attr("font-size","11px").attr("fill","#2c1008")
+    .attr("font-family","'IM Fell English',serif").text(item.label);
+});
+
+function clamp(v,a,b){ return Math.max(a,Math.min(b,v)); }
+function phaseT(s,e,t){ return clamp((t-s)/(e-s),0,1); }
+function lerp(a,b,t){ return a+(b-a)*t; }
+function annOp(s,e,t,fd){
+  fd=fd||600;
+  if(t<=s||t>=e) return 0;
+  if(t<s+fd) return (t-s)/fd;
+  if(t>e-fd) return (e-t)/fd;
+  return 1;
+}
+
+function updateViz(e){
+  mapG.style("opacity", phaseT(0,2000,e));
+  locEls.forEach((g,i)=>g.style("opacity", phaseT(2000+i*175,3800+i*175,e)));
+  annTarget.style("opacity", annOp(4000,7500,e));
+  rRevere.el.attr("stroke-dashoffset", lerp(rRevere.len,0,phaseT(8000,15000,e)));
+  annRevere.style("opacity", annOp(8500,14500,e));
+
+  const LB = rBritish.len;
+  let bOff;
+  if      (e <= 15000) bOff = LB;
+  else if (e <= 21000) bOff = lerp(LB, LB-L_P1, phaseT(15000,21000,e));
+  else if (e <= 29000) bOff = LB-L_P1;
+  else if (e <= 34000) bOff = lerp(LB-L_P1, 0, phaseT(29000,34000,e));
+  else                 bOff = 0;
+
+  if (e < 49500) {
+    rBritish.el.attr("stroke-dasharray", LB).attr("stroke-dashoffset", bOff);
+  } else {
+    const tR = phaseT(49500,58000,e);
+    const vis = Math.max(0, lerp(LB, 0, tR));
+    rBritish.el.attr("stroke-dasharray", `${vis} ${LB}`).attr("stroke-dashoffset", 0);
+  }
+  annBritish.style("opacity", annOp(15500,20500,e));
+
+  capMark.style("opacity", phaseT(21000,21700,e));
+  const cr1 = phaseT(21000,22800,e);
+  capRing1.attr("r", lerp(0,38,cr1))
+    .style("opacity", cr1<0.5 ? lerp(0,0.85,cr1*2) : lerp(0.85,0,(cr1-0.5)*2));
+  const cr2 = phaseT(21400,23400,e);
+  capRing2.attr("r", lerp(0,55,cr2))
+    .style("opacity", cr2<0.5 ? lerp(0,0.5,cr2*2) : lerp(0.5,0,(cr2-0.5)*2));
+  annCapture.style("opacity", annOp(21000,25500,e,500));
+
+  rPrescott.el.attr("stroke-dashoffset", lerp(rPrescott.len,0,phaseT(24500,29000,e)));
+  annPrescott.style("opacity", annOp(24500,29000,e));
+
+  const lt=phaseT(34000,36500,e);
+  const lr=lt<0.5 ? lerp(0,20,lt*2) : lerp(20,0,(lt-0.5)*2);
+  lexFlash.attr("r",lr).style("opacity", lt<0.5 ? lt*2 : (1-lt)*2);
+  annLexington.style("opacity", annOp(34000,36500,e));
+
+  const mSlot=10000/rMilitia.length;
+  rMilitia.forEach((m,i)=>{
+    m.el.attr("stroke-dashoffset", lerp(m.len,0,phaseT(36500+i*mSlot,36500+(i+1)*mSlot,e)));
+  });
+  annMilitia.style("opacity", annOp(37000,46000,e));
+
+  const nt=phaseT(46500,49500,e);
+  nbRing.attr("r",lerp(0,55,nt)).style("opacity", nt<0.7?0.9:lerp(0.9,0,(nt-0.7)/0.3));
+  nbDot.attr("r",lerp(0,9,clamp(nt*3,0,1))).style("opacity",nt>0?1:0);
+  annNorthBridge.style("opacity", annOp(46500,49500,e,400));
+
+  const clearMult = 1 - phaseT(49500, 51000, e);
+  rRevere.el.style("opacity", clearMult);
+  rPrescott.el.style("opacity", clearMult);
+  rMilitia.forEach(m => m.el.style("opacity", clearMult));
+  capMark.style("opacity", Math.min(phaseT(21000,21700,e), clearMult));
+  nbDot.style("opacity", clearMult);
+
+  rMinuteFollow.el.attr("stroke-dashoffset", lerp(rMinuteFollow.len, 0, phaseT(50500,58000,e)));
+  annRetreat.style("opacity", annOp(50000,57500,e));
+  closingCard.style("opacity", annOp(54000,62000,e,700));
+}
+
+let elapsed=0, lastTS=null, mapRunning=false;
+function tick(ts){
+  if(lastTS!==null) elapsed+=ts-lastTS;
+  lastTS=ts;
+  if(elapsed>=TOTAL+LOOP_PAUSE){ elapsed=0; lastTS=ts; }
+  updateViz(Math.min(elapsed,TOTAL));
+  requestAnimationFrame(tick);
+}
+
+const mapObs = new IntersectionObserver(entries => {
+  if(!mapRunning && entries[0].isIntersecting){
+    mapRunning = true;
+    mapObs.disconnect();
+    updateViz(0);
+    setTimeout(() => requestAnimationFrame(tick), 400);
+  }
+}, { threshold: 0.15 });
+mapObs.observe(document.getElementById('map-container'));
+
+window.addEventListener('load', () => updateViz(0));
+</script>
+</body>
+</html>
