@@ -9,15 +9,16 @@
   <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
   <style>
     :root {
-      --gold:    #8b6214;
-      --gold-lt: #c8a840;
-      --ink-dk:  #1e0804;
-      --ink-md:  #3a1f08;
-      --ink-lt:  #5a3010;
-      --cream:   rgba(253,248,226,0.88);
-      --red:     #8b1a1a;
-      --blue:    #1a3a6b;
-      --font:    'IM Fell English', serif;
+      --gold:       #8b6214;
+      --gold-lt:    #c8a840;
+      --ink-dk:     #1e0804;
+      --ink-md:     #3a1f08;
+      --ink-lt:     #5a3010;
+      --cream:      rgba(253,248,226,0.88);
+      --red:        #8b1a1a;
+      --blue:       #1a3a6b;
+      --green-cons: #2d5a27;
+      --font:       'IM Fell English', serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -78,7 +79,6 @@
     .ch-title {
       font-size: 1.6rem;
       font-weight: normal;
-      font-style: italic;
       color: var(--ink-dk);
       padding-bottom: 9px;
       border-bottom: 1px solid rgba(139,98,20,0.28);
@@ -129,10 +129,9 @@
     }
 
     .hero-intro {
-      font-size: 0.94rem;
-      font-style: italic;
+      font-size: 1rem;
       color: var(--ink-md);
-      line-height: 1.82;
+      line-height: 1.9;
       max-width: 680px;
       margin: 0 auto 6px;
     }
@@ -245,9 +244,8 @@
     .ctx-head svg { flex-shrink: 0; }
 
     .ctx-card p, .ctx-full p {
-      font-size: 0.96rem;
-      font-style: italic;
-      line-height: 1.8;
+      font-size: 1rem;
+      line-height: 1.9;
       color: var(--ink-md);
     }
 
@@ -352,8 +350,8 @@
     }
 
     .stat-body {
-      font-size: 0.86rem; font-style: italic;
-      color: var(--ink-md); line-height: 1.65;
+      font-size: 0.92rem;
+      color: var(--ink-md); line-height: 1.75;
       text-align: left;
     }
     .stat-body ul { list-style: none; padding: 0 4px; }
@@ -392,8 +390,8 @@
       pointer-events: none;
     }
     .emerson-q p {
-      font-size: 1.15rem; font-style: italic;
-      color: var(--ink-md); line-height: 2.1;
+      font-size: 1.18rem; font-style: italic;
+      color: var(--ink-md); line-height: 2.15;
       margin-bottom: 16px;
     }
     .emerson-q cite {
@@ -411,6 +409,158 @@
       color: var(--ink-lt); line-height: 1.9;
     }
 
+    /* ══════════════════════════════════════════════
+       TIMELINE
+    ══════════════════════════════════════════════ */
+    .timeline-section {
+      padding: 60px 28px 64px;
+      text-align: center;
+      border-bottom: 1px solid rgba(139,98,20,0.2);
+    }
+    .timeline-intro {
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .timeline-intro-sub {
+      font-size: 1.15rem;
+      color: var(--ink-lt);
+      margin-bottom: 52px;
+    }
+    .timeline-track {
+      position: relative;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .timeline-line {
+      position: absolute;
+      top: 36px;
+      left: 9%;
+      right: 9%;
+      height: 1px;
+      background: linear-gradient(to right,
+        transparent,
+        rgba(139,98,20,0.5) 8%,
+        rgba(139,98,20,0.5) 92%,
+        transparent);
+    }
+    .timeline-nodes {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+    .timeline-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 17%;
+    }
+    .node-year {
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 11px;
+      line-height: 1;
+    }
+    .node-dot {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 1.5px solid var(--gold);
+      background: rgba(253,248,226,0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--gold);
+      margin-bottom: 16px;
+      box-shadow: 0 2px 10px rgba(80,50,10,0.12);
+      flex-shrink: 0;
+    }
+    .node-dot.built {
+      background: var(--gold);
+      color: #fdf8e8;
+      box-shadow: 0 2px 16px rgba(139,98,20,0.45);
+    }
+    .node-title {
+      font-size: 1rem;
+      color: var(--ink-dk);
+      line-height: 1.45;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+    .node-desc {
+      font-size: 0.86rem;
+      color: var(--ink-lt);
+      line-height: 1.65;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .node-badge {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(139,98,20,0.38);
+      padding: 4px 12px;
+      display: inline-block;
+    }
+    .fi.d3 { transition-delay: 0.54s; }
+    .fi.d4 { transition-delay: 0.72s; }
+
+    /* ══════════════════════════════════════════════
+       VISUAL 2 — Transcendentalists
+    ══════════════════════════════════════════════ */
+    .figures-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 860px;
+      margin: 24px auto 0;
+    }
+    .figure-card {
+      background: var(--cream);
+      border: 1px solid var(--gold);
+      border-top: 3px solid var(--gold);
+      padding: 28px 28px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+    .figure-portrait {
+      width: 110px;
+      flex-shrink: 0;
+      border: 2px solid var(--gold);
+      filter: sepia(18%);
+      box-shadow: 2px 3px 10px rgba(60,30,0,0.22);
+      display: block;
+    }
+    .figure-info { flex: 1; }
+    .figure-name {
+      font-size: 1.15rem; font-weight: normal;
+      color: var(--ink-dk); margin-bottom: 3px;
+    }
+    .figure-dates {
+      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 4px; display: block;
+    }
+    .figure-role {
+      font-size: 0.82rem; font-style: italic; color: var(--ink-lt);
+      margin-bottom: 6px; display: block;
+    }
+    .figure-work {
+      font-size: 0.88rem; font-style: italic; color: var(--ink-md);
+      margin-bottom: 10px; display: block;
+    }
+    .figure-body {
+      font-size: 0.97rem; color: var(--ink-md);
+      line-height: 1.82;
+    }
+
     /* ── Map SVG classes (unchanged from original) ─ */
     .river       { fill:none; stroke:#5d8fac; stroke-width:2; stroke-opacity:0.55; }
     .harbor      { fill:#8cb8d0; fill-opacity:0.32; stroke:#5d8fac; stroke-width:1; stroke-opacity:0.45; }
@@ -426,6 +576,16 @@
     .ann-line1{ font-family:'IM Fell English',serif; font-size:12.5px; font-weight:bold; fill:#1e0804; }
     .ann-line2{ font-family:'IM Fell English',serif; font-size:11.5px; font-style:italic; fill:#3a1608; }
     .ann-hero { font-family:'IM Fell English',serif; font-size:14px; font-weight:bold; fill:#6b0000; }
+
+    /* ══════════════════════════════════════════════
+       VISUAL 3 — Conservation chart
+    ══════════════════════════════════════════════ */
+    #conservation-chart-container {
+      display: inline-block;
+      box-shadow: 0 8px 36px rgba(80,50,10,0.35), 0 0 0 3px #8b6214, 0 0 0 7px #c8a840;
+      border-radius: 2px;
+      line-height: 0;
+    }
   </style>
 </head>
 <body>
@@ -435,17 +595,10 @@
 ══════════════════════════════════════════════════════ -->
 <header class="hero">
 
-  <!-- Crossed muskets emblem -->
-  <svg viewBox="0 0 130 64" width="110" height="55" aria-hidden="true" style="display:block;margin:0 auto 16px;">
-    <line x1="8" y1="54" x2="62" y2="10" stroke="#8b6214" stroke-width="4" stroke-linecap="round"/>
-    <polygon points="62,10 55,8 58,16" fill="#8b6214"/>
-    <ellipse cx="7" cy="56" rx="9" ry="4.5" transform="rotate(-42,7,56)" fill="#8b6214"/>
-    <line x1="122" y1="54" x2="68" y2="10" stroke="#8b6214" stroke-width="4" stroke-linecap="round"/>
-    <polygon points="68,10 72,8 75,16" fill="#8b6214"/>
-    <ellipse cx="123" cy="56" rx="9" ry="4.5" transform="rotate(42,123,56)" fill="#8b6214"/>
-    <circle cx="65" cy="32" r="14" fill="rgba(253,248,226,0.92)" stroke="#8b6214" stroke-width="1.3"/>
-    <text x="65" y="38" text-anchor="middle" font-size="16" fill="#8b6214" font-family="serif">✦</text>
-  </svg>
+  <!-- Concord MA symbol -->
+  <img src="../proposal photos/concord_ma_symbol.jpg"
+       alt="Seal of Concord, Massachusetts"
+       style="display:block; margin:0 auto 16px; width:90px; height:90px; object-fit:contain; border-radius:50%; border:2px solid var(--gold); box-shadow:0 2px 14px rgba(80,50,10,0.22); filter:sepia(10%);"/>
 
   <p class="hero-anniversary">Massachusetts &nbsp;·&nbsp; 250th Anniversary</p>
   <h1 class="hero-page-title">Concord Through Time</h1>
@@ -466,6 +619,63 @@
 
 
 </header>
+
+<!-- ══════════════════════════════════════════════════════
+     TIMELINE — five chapters, 250 years
+══════════════════════════════════════════════════════ -->
+<section class="timeline-section">
+
+  <p class="timeline-intro fi">Concord, Massachusetts &nbsp;·&nbsp; 250th Anniversary</p>
+  <p class="timeline-intro-sub fi d1">Five chapters spanning 250 years of history, legacy, and living community</p>
+
+  <div class="timeline-track">
+    <div class="timeline-line"></div>
+    <div class="timeline-nodes">
+
+      <div class="timeline-node fi">
+        <span class="node-year">1775</span>
+        <div class="node-dot built">1</div>
+        <p class="node-title">The Battle of Lexington &amp; Concord</p>
+        <p class="node-desc">The Shot Heard Round the World — the opening of the American Revolution</p>
+        <span class="node-badge" data-target="visual-1">Visual 1 ↓</span>
+      </div>
+
+      <div class="timeline-node fi d1">
+        <span class="node-year">1830s–40s</span>
+        <div class="node-dot">2</div>
+        <p class="node-title">The Transcendentalist Movement</p>
+        <p class="node-desc">Emerson &amp; Thoreau make Concord America's intellectual capital</p>
+        <span class="node-badge" data-target="visual-2">Visual 2 ↓</span>
+      </div>
+
+      <div class="timeline-node fi d2">
+        <span class="node-year">1845</span>
+        <div class="node-dot">3</div>
+        <p class="node-title">Walden Pond &amp; Conservation</p>
+        <p class="node-desc">Thoreau's experiment seeds the American environmental movement</p>
+        <span class="node-badge" data-target="visual-3">Visual 3 ↓</span>
+      </div>
+
+      <div class="timeline-node fi d3">
+        <span class="node-year">1959</span>
+        <div class="node-dot">4</div>
+        <p class="node-title">Minute Man National Historical Park</p>
+        <p class="node-desc">Federal preservation launches Concord's tourism &amp; recreation economy</p>
+        <span class="node-badge">Visual 4</span>
+      </div>
+
+      <div class="timeline-node fi d4">
+        <span class="node-year">Present</span>
+        <div class="node-dot">5</div>
+        <p class="node-title">Modern Concord — 250 Years Later</p>
+        <p class="node-desc">Population growth, demographics, and civic identity today</p>
+        <span class="node-badge">Visual 5</span>
+      </div>
+
+    </div>
+  </div>
+
+</section>
 
 <!-- ══════════════════════════════════════════════════════
      STORY SECTION — Parker quote through stats
@@ -632,31 +842,154 @@
 </section>
 
 <!-- ══════════════════════════════════════════════════════
-     SECTION IV — THE LEGACY
+     VISUAL 2 — The Transcendentalist Movement
 ══════════════════════════════════════════════════════ -->
-<section class="emerson-section">
+<section id="visual-2" class="story-section">
   <div class="wrap">
 
     <div class="ch-head">
-      <h2 class="ch-title">The Words That Endure</h2>
+      <h2 class="ch-title">The Transcendentalist Movement</h2>
     </div>
 
-    <div class="orn" style="margin-top:8px;">
+    <p class="fi" style="font-size:1rem; font-style:italic; color:var(--ink-lt); line-height:1.8; max-width:740px; margin:0 0 8px;">In the 1830s and 1840s, Concord became the center of American intellectual life. Ralph Waldo Emerson settled here in 1835, and within a decade the town had drawn some of the most visionary minds of the 19th century — writers, philosophers, and activists who would reshape how Americans understood nature, individuality, and social justice. Their ideas, born in this small Massachusetts town, echo through American culture to this day.</p>
+
+    <div class="figures-grid">
+
+      <!-- Emerson + Concord Hymn side by side -->
+      <div class="fi" style="display:flex; gap:36px; align-items:center;">
+        <div class="figure-card" style="flex:1; margin:0;">
+          <img src="../proposal photos/Ralph-Waldo-Emerson-1860.webp"
+               alt="Ralph Waldo Emerson" class="figure-portrait"/>
+          <div class="figure-info">
+            <p class="figure-name">Ralph Waldo Emerson</p>
+            <span class="figure-dates">1803–1882</span>
+            <span class="figure-role">Philosopher, Essayist &amp; Poet</span>
+            <span class="figure-work">Key works: <em>Nature</em> (1836), <em>Self-Reliance</em> (1841)</span>
+            <p class="figure-body">Emerson moved to Concord in 1835 and his home on Cambridge Turnpike became the gathering place of the Transcendentalist circle. His essay <em>Nature</em>, written here, launched a movement that reshaped American thought and cemented Concord as its spiritual home.</p>
+          </div>
+        </div>
+        <blockquote style="flex:1; padding:0; margin:0; border:none; background:none;">
+          <p style="font-size:1.1rem; font-style:italic; color:var(--ink-md); line-height:2.2; margin-bottom:14px;">
+            By the rude bridge that arch'd the flood,<br>
+            Their flag to April's breeze unfurl'd,<br>
+            Here once the embattled farmers stood,<br>
+            And fired the shot heard round the world.
+          </p>
+          <cite style="font-size:0.82rem; color:var(--ink-lt); font-style:normal;">— Ralph Waldo Emerson, <em>Concord Hymn</em>, 1837</cite>
+        </blockquote>
+      </div>
+
+
+      <!-- Alcott -->
+      <div class="figure-card fi d2">
+        <img src="../proposal photos/Louisa_May_Alcott,_c._1870_-_Warren's_Portraits,_Boston.jpg"
+             alt="Louisa May Alcott" class="figure-portrait"/>
+        <div class="figure-info">
+          <p class="figure-name">Louisa May Alcott</p>
+          <span class="figure-dates">1832–1888</span>
+          <span class="figure-role">Author &amp; Social Activist</span>
+          <span class="figure-work">Key work: <em>Little Women</em> (1868)</span>
+          <p class="figure-body">Louisa grew up at Orchard House in Concord, surrounded by the Transcendentalist movement her father Bronson helped lead. <em>Little Women</em> drew directly from her Concord childhood and became one of the most beloved American novels ever written.</p>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     VISUAL 3 — Walden's Legacy: Population & Conservation
+══════════════════════════════════════════════════════ -->
+<!-- Walden Pond — historical context -->
+<section id="visual-3" class="story-section">
+  <div class="wrap">
+
+    <div class="ch-head">
+      <h2 class="ch-title">Walden Pond, 1845</h2>
+    </div>
+
+    <!-- Thoreau profile + pond intro side by side -->
+    <div class="fi" style="display:flex; gap:32px; align-items:flex-start; margin-bottom:32px;">
+      <div class="figure-card" style="flex:1; margin:0;">
+        <img src="../proposal photos/Benjamin_D._Maxham_-_Henry_David_Thoreau_-_Restored.jpg"
+             alt="Henry David Thoreau" class="figure-portrait"/>
+        <div class="figure-info">
+          <p class="figure-name">Henry David Thoreau</p>
+          <span class="figure-dates">1817–1862</span>
+          <span class="figure-role">Naturalist, Author &amp; Philosopher</span>
+          <span class="figure-work">Key works: <em>Walden</em> (1854), <em>Civil Disobedience</em> (1849)</span>
+          <p class="figure-body">Born in Concord and mentored by Emerson, Thoreau built his cabin at Walden Pond just two miles from town. His two years there produced a masterwork of American literature and planted the seeds of the modern environmental and civil rights movements.</p>
+        </div>
+      </div>
+      <div style="flex:1; font-size:1rem; color:var(--ink-md); line-height:1.9; padding-top:4px;">
+        <p>A glacial kettle pond of remarkable clarity, Walden sits 102 feet deep in the woods two miles
+        south of Concord. In July 1845 Thoreau moved into a small cabin on its shore and stayed for
+        two years, two months, and two days.</p>
+        <p style="margin-top:16px;"><em>Walden</em>, published in 1854, became the foundational text
+        of the American conservation movement — its ideas reaching Gandhi, Martin Luther King Jr.,
+        and the land preservation efforts that would define Concord for generations to come.</p>
+      </div>
+    </div>
+
+
+    <div style="text-align:center;" class="fi d2">
+      <blockquote class="emerson-q" style="max-width:580px;">
+        <p>"I went to the woods because I wished to live deliberately… and not, when I came to die, discover that I had not lived."</p>
+        <cite>— Henry David Thoreau, <em>Walden</em>, 1854</cite>
+      </blockquote>
+    </div>
+
+    <div class="orn">
       <div class="orn-line"></div>
       <span class="orn-sym">✦</span>
       <div class="orn-line"></div>
     </div>
 
-    <blockquote class="emerson-q fi">
-      <p>
-        By the rude bridge that arch'd the flood,<br>
-        Their flag to April's breeze unfurl'd,<br>
-        Here once the embattled farmers stood,<br>
-        And fired the shot heard round the world.
-      </p>
-      <cite>— Ralph Waldo Emerson, <em>Concord Hymn</em>, 1837<br>
-      Written for the dedication of the Obelisk at Concord's North Bridge</cite>
-    </blockquote>
+  </div>
+</section>
+
+<!-- 21st Century Conservation -->
+<section class="story-section">
+  <div class="wrap">
+
+    <div class="ch-head">
+      <h2 class="ch-title">Concord's 21st Century Conservation Record</h2>
+    </div>
+
+    <p class="fi" style="font-size:1rem; font-style:italic; color:var(--ink-lt); line-height:1.8; max-width:740px; margin:0 0 28px;">
+      Concord's commitment to protecting open land has grown dramatically in the 21st century.
+      While the town's population has remained relatively stable — growing just 6% from 2000 to 2023 —
+      its conserved acreage has expanded by 69%, driven by the Concord Land Conservation Trust
+      and other preservation efforts. The numbers tell a story of a community that takes its
+      environmental legacy seriously.
+    </p>
+
+    <div style="text-align:center; margin-bottom:12px;">
+      <div id="conservation-chart-container" class="fi d1">
+        <svg id="conservation-chart" width="900" height="420"></svg>
+      </div>
+    </div>
+
+    <p class="map-caption fi d2" style="margin-bottom:32px;">
+      Population: U.S. Census Bureau &nbsp;·&nbsp; Conservation acreage: Concord Land Conservation Trust estimates
+    </p>
+
+    <div id="conservation-stats" class="stats-grid" style="max-width:640px; margin:0 auto 36px; grid-template-columns:repeat(2,1fr); opacity:0; transition:opacity 0.9s ease;">
+      <div class="stat-card">
+        <p class="stat-title">Protected Land</p>
+        <p class="stat-title-sub">Concord, MA — 2023</p>
+        <div class="stat-big">5,420</div>
+        <div class="stat-lbl" style="margin-top:4px;">acres of conserved land</div>
+      </div>
+      <div class="stat-card">
+        <p class="stat-title">Conservation Growth</p>
+        <p class="stat-title-sub">2000 → 2023</p>
+        <div class="stat-big" style="color:var(--green-cons);">+69%</div>
+        <div class="stat-lbl" style="margin-top:4px;">increase in protected acreage<br>vs. only +6% population growth</div>
+      </div>
+    </div>
 
     <div class="orn">
       <div class="orn-line"></div>
@@ -1048,6 +1381,151 @@ const mapObs = new IntersectionObserver(entries => {
   }
 }, { threshold: 0.15 });
 mapObs.observe(document.getElementById('map-container'));
+
+/* ══════════════════════════════════════════════════════
+   VISUAL 3 — Population & Conservation Dual-Axis Line Chart
+══════════════════════════════════════════════════════ */
+const conservationData = [
+  {year:2000,pop:17031,acres:3200},{year:2001,pop:17195,acres:3280},
+  {year:2002,pop:17270,acres:3350},{year:2003,pop:17319,acres:3430},
+  {year:2004,pop:17478,acres:3520},{year:2005,pop:17607,acres:3680},
+  {year:2006,pop:17681,acres:3780},{year:2007,pop:17712,acres:3870},
+  {year:2008,pop:17843,acres:3950},{year:2009,pop:17877,acres:4040},
+  {year:2010,pop:17767,acres:4120},{year:2011,pop:18756,acres:4200},
+  {year:2012,pop:18934,acres:4290},{year:2013,pop:19198,acres:4380},
+  {year:2014,pop:19352,acres:4460},{year:2015,pop:19576,acres:4550},
+  {year:2016,pop:19092,acres:4630},{year:2017,pop:19089,acres:4710},
+  {year:2018,pop:18937,acres:4800},{year:2019,pop:18905,acres:4900},
+  {year:2020,pop:18362,acres:5050},{year:2021,pop:18208,acres:5160},
+  {year:2022,pop:18053,acres:5290},{year:2023,pop:18086,acres:5420}
+];
+
+const CW=900, CH=420, CM={top:52,right:88,bottom:58,left:78};
+const cInnerW=CW-CM.left-CM.right, cInnerH=CH-CM.top-CM.bottom;
+
+const cSvg=d3.select("#conservation-chart").attr("width",CW).attr("height",CH);
+const cDefs=cSvg.append("defs");
+
+const cpg=cDefs.append("radialGradient").attr("id","cParchGrad")
+  .attr("cx","48%").attr("cy","44%").attr("r","65%");
+cpg.append("stop").attr("offset","0%").attr("stop-color","#faf3df");
+cpg.append("stop").attr("offset","55%").attr("stop-color","#ecdfa8");
+cpg.append("stop").attr("offset","100%").attr("stop-color","#c8a840").attr("stop-opacity","0.85");
+
+const cpaper=cDefs.append("filter").attr("id","cPaper")
+  .attr("x","0%").attr("y","0%").attr("width","100%").attr("height","100%");
+cpaper.append("feTurbulence").attr("type","fractalNoise").attr("baseFrequency","0.70")
+  .attr("numOctaves","4").attr("stitchTiles","stitch").attr("result","noise");
+cpaper.append("feColorMatrix").attr("in","noise").attr("type","saturate").attr("values","0").attr("result","gray");
+cpaper.append("feBlend").attr("in","SourceGraphic").attr("in2","gray").attr("mode","multiply").attr("result","blend");
+cpaper.append("feComposite").attr("in","blend").attr("in2","SourceGraphic").attr("operator","in");
+
+cSvg.append("rect").attr("width",CW).attr("height",CH)
+  .attr("fill","#fefefe");
+[{x:8,sw:2},{x:14,sw:0.7}].forEach(b=>{
+  cSvg.append("rect").attr("x",b.x).attr("y",b.x).attr("width",CW-2*b.x).attr("height",CH-2*b.x)
+    .attr("fill","none").attr("stroke","#8b6214").attr("stroke-width",b.sw);
+});
+
+const cG=cSvg.append("g").attr("transform",`translate(${CM.left},${CM.top})`);
+
+const xScale=d3.scaleLinear().domain([2000,2023]).range([0,cInnerW]);
+const yPop=d3.scaleLinear().domain([16000,20500]).range([cInnerH,0]);
+const yAcres=d3.scaleLinear().domain([2800,6000]).range([cInnerH,0]);
+
+
+// Axes
+cG.append("g").attr("transform",`translate(0,${cInnerH})`)
+  .call(d3.axisBottom(xScale).tickValues([2000,2005,2010,2015,2020,2023]).tickFormat(d3.format("d")))
+  .call(g=>g.select(".domain").attr("stroke","#8b6214"))
+  .call(g=>g.selectAll(".tick line").attr("stroke","#8b6214"))
+  .call(g=>g.selectAll(".tick text").attr("font-family","'IM Fell English',serif").attr("font-size","12px").attr("fill","#8b6214").attr("dy","1.2em"));
+
+cG.append("g").call(d3.axisLeft(yPop).ticks(5).tickFormat(d=>d3.format(",")(d)))
+  .call(g=>g.select(".domain").attr("stroke","#8b1a1a"))
+  .call(g=>g.selectAll(".tick line").attr("stroke","#8b1a1a"))
+  .call(g=>g.selectAll(".tick text").attr("font-family","'IM Fell English',serif").attr("font-size","11px").attr("fill","#8b1a1a"));
+
+cG.append("g").attr("transform",`translate(${cInnerW},0)`)
+  .call(d3.axisRight(yAcres).ticks(5).tickFormat(d=>d3.format(",")(d)))
+  .call(g=>g.select(".domain").attr("stroke","#2d5a27"))
+  .call(g=>g.selectAll(".tick line").attr("stroke","#2d5a27"))
+  .call(g=>g.selectAll(".tick text").attr("font-family","'IM Fell English',serif").attr("font-size","11px").attr("fill","#2d5a27"));
+
+// Axis labels
+[
+  {t:`translate(${CM.left-52},${CM.top+cInnerH/2}) rotate(-90)`,txt:"Population",fill:"#8b1a1a"},
+  {t:`translate(${CM.left+cInnerW+56},${CM.top+cInnerH/2}) rotate(90)`,txt:"Conserved Acres",fill:"#2d5a27"},
+  {t:`translate(${CM.left+cInnerW/2},${CH-10})`,txt:"Year",fill:"#8b6214"}
+].forEach(l=>{
+  cSvg.append("text").attr("transform",l.t).attr("text-anchor","middle")
+    .attr("font-family","'IM Fell English',serif").attr("font-size","13px")
+    .attr("fill",l.fill).text(l.txt);
+});
+
+// Chart title
+cSvg.append("text").attr("x",CW/2).attr("y",30).attr("text-anchor","middle")
+  .attr("font-family","'IM Fell English',serif").attr("font-size","15px")
+  .attr("fill","#1e0804")
+  .text("Concord, MA — Population & Protected Land (2000–2023)");
+
+// Line generators
+const popLine=d3.line().x(d=>xScale(d.year)).y(d=>yPop(d.pop)).curve(d3.curveCatmullRom.alpha(0.5));
+const acresLine=d3.line().x(d=>xScale(d.year)).y(d=>yAcres(d.acres)).curve(d3.curveCatmullRom.alpha(0.5));
+
+const popPath=cG.append("path").datum(conservationData).attr("fill","none")
+  .attr("stroke","#8b1a1a").attr("stroke-width",2.4).attr("d",popLine);
+const popLen=popPath.node().getTotalLength();
+popPath.attr("stroke-dasharray",popLen).attr("stroke-dashoffset",popLen);
+
+const acresPath=cG.append("path").datum(conservationData).attr("fill","none")
+  .attr("stroke","#2d5a27").attr("stroke-width",2.4).attr("d",acresLine);
+const acresLen=acresPath.node().getTotalLength();
+acresPath.attr("stroke-dasharray",acresLen).attr("stroke-dashoffset",acresLen);
+
+// Endpoint dots
+const popDot=cG.append("circle").attr("cx",xScale(2023)).attr("cy",yPop(18086)).attr("r",0).attr("fill","#8b1a1a");
+const acresDot=cG.append("circle").attr("cx",xScale(2023)).attr("cy",yAcres(5420)).attr("r",0).attr("fill","#2d5a27");
+
+
+// Legend — no box, clean lines on white
+const legC=cG.append("g").attr("transform",`translate(${cInnerW-196},8)`);
+[{l:"Concord Population",s:"#8b1a1a",y:8},{l:"Conserved Acreage",s:"#2d5a27",y:30}].forEach(i=>{
+  legC.append("line").attr("x1",0).attr("y1",i.y).attr("x2",24).attr("y2",i.y).attr("stroke",i.s).attr("stroke-width",2.4);
+  legC.append("text").attr("x",32).attr("y",i.y+4).attr("font-family","'IM Fell English',serif")
+    .attr("font-size","11.5px").attr("fill","#555").text(i.l);
+});
+
+// Animation
+const CHTOTAL=10000, CHPAUSE=2000;
+function updateChartViz(e){
+  cSvg.style("opacity",phaseT(0,500,e));
+  popPath.attr("stroke-dashoffset",lerp(popLen,0,phaseT(500,4500,e)));
+  popDot.attr("r",phaseT(4500,5000,e)*5);
+  acresPath.attr("stroke-dashoffset",lerp(acresLen,0,phaseT(3000,7500,e)));
+  acresDot.attr("r",phaseT(7500,8000,e)*5);
+}
+
+let chElapsed=0,chLastTS=null,chRunning=false;
+function chartTick(ts){
+  if(chLastTS!==null) chElapsed+=ts-chLastTS;
+  chLastTS=ts;
+  updateChartViz(Math.min(chElapsed,CHTOTAL));
+  if(chElapsed<CHTOTAL){
+    requestAnimationFrame(chartTick);
+  } else {
+    const statsEl=document.getElementById('conservation-stats');
+    if(statsEl) statsEl.style.opacity='1';
+  }
+}
+const chartObs=new IntersectionObserver(entries=>{
+  if(!chRunning&&entries[0].isIntersecting){
+    chRunning=true;chartObs.disconnect();
+    updateChartViz(0);
+    setTimeout(()=>requestAnimationFrame(chartTick),400);
+  }
+},{threshold:0.15});
+chartObs.observe(document.getElementById('conservation-chart-container'));
 
 window.addEventListener('load', () => updateViz(0));
 </script>
