@@ -456,7 +456,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 17%;
+      width: 14%;
     }
     .node-year {
       font-size: 0.82rem;
@@ -511,6 +511,7 @@
     }
     .fi.d3 { transition-delay: 0.54s; }
     .fi.d4 { transition-delay: 0.72s; }
+    .fi.d5 { transition-delay: 0.90s; }
 
     /* ══════════════════════════════════════════════
        VISUAL 2 — Transcendentalists
@@ -619,6 +620,16 @@
       border-radius: 2px;
       line-height: 0;
     }
+
+    /* ══════════════════════════════════════════════
+       VISUAL 5 — Demographics
+    ══════════════════════════════════════════════ */
+    #demo-chart-container {
+      display: inline-block;
+      box-shadow: 0 8px 36px rgba(80,50,10,0.35), 0 0 0 3px #8b6214, 0 0 0 7px #c8a840;
+      border-radius: 2px;
+      line-height: 0;
+    }
   </style>
 </head>
 <body>
@@ -659,7 +670,7 @@
 <section class="timeline-section">
 
   <p class="timeline-intro fi">Concord, Massachusetts &nbsp;·&nbsp; 250th Anniversary</p>
-  <p class="timeline-intro-sub fi d1">Five chapters spanning 250 years of history, legacy, and living community</p>
+  <p class="timeline-intro-sub fi d1">Six chapters spanning 250 years of history, legacy, and living community</p>
 
   <div class="timeline-track">
     <div class="timeline-line"></div>
@@ -669,40 +680,42 @@
         <span class="node-year">1775</span>
         <div class="node-dot built">1</div>
         <p class="node-title">The Battle of Lexington &amp; Concord</p>
-        <p class="node-desc">The Shot Heard Round the World — the opening of the American Revolution</p>
         <span class="node-badge" data-target="visual-1">Visual 1 ↓</span>
       </div>
 
       <div class="timeline-node fi d1">
         <span class="node-year">1830s–40s</span>
-        <div class="node-dot">2</div>
+        <div class="node-dot built">2</div>
         <p class="node-title">The Transcendentalist Movement</p>
-        <p class="node-desc">Emerson &amp; Thoreau make Concord America's intellectual capital</p>
         <span class="node-badge" data-target="visual-2">Visual 2 ↓</span>
       </div>
 
       <div class="timeline-node fi d2">
         <span class="node-year">1845</span>
-        <div class="node-dot">3</div>
+        <div class="node-dot built">3</div>
         <p class="node-title">Walden Pond</p>
-        <p class="node-desc">Thoreau's two years at Walden plant the seeds of American environmentalism</p>
         <span class="node-badge" data-target="visual-3">Visual 3 ↓</span>
       </div>
 
       <div class="timeline-node fi d3">
-        <span class="node-year">1959</span>
-        <div class="node-dot">4</div>
-        <p class="node-title">Minute Man National Historical Park</p>
-        <p class="node-desc">Federal preservation launches Concord's heritage tourism economy</p>
-        <span class="node-badge" data-target="visual-4">Visual 4 ↓</span>
+        <span class="node-year">1832–Present</span>
+        <div class="node-dot built">4</div>
+        <p class="node-title">Women of Concord</p>
+        <span class="node-badge" data-target="visual-women">Visual 4 ↓</span>
       </div>
 
       <div class="timeline-node fi d4">
+        <span class="node-year">1959</span>
+        <div class="node-dot built">5</div>
+        <p class="node-title">Minute Man National Historical Park</p>
+        <span class="node-badge" data-target="visual-4">Visual 5 ↓</span>
+      </div>
+
+      <div class="timeline-node fi d5">
         <span class="node-year">2000s–Present</span>
-        <div class="node-dot">5</div>
-        <p class="node-title">Modern Concord — 250 Years Later</p>
-        <p class="node-desc">Conservation growth, demographics, and civic identity today</p>
-        <span class="node-badge">Visual 5</span>
+        <div class="node-dot built">6</div>
+        <p class="node-title">Concord's Living Legacy</p>
+        <span class="node-badge" data-target="visual-5">Visual 6 ↓</span>
       </div>
 
     </div>
@@ -713,7 +726,7 @@
 <!-- ══════════════════════════════════════════════════════
      STORY SECTION — Parker quote through stats
 ══════════════════════════════════════════════════════ -->
-<section class="story-section">
+<section id="visual-1" class="story-section">
 
   <!-- The Night of April 18 -->
   <div class="wrap">
@@ -722,7 +735,7 @@
     </div>
     <div class="ctx-with-img">
       <div class="ctx-full fi">
-        <p>On the night of April 18, 1775, Lt. Colonel Francis Smith led approximately 700 British Regulars out of Boston under cover of darkness, ordered to march on Concord and destroy the colonial militia's hidden stores of arms — a mission meant to crush any rebellion before it could take root. To counter the threat, Paul Revere, William Dawes, and Samuel Prescott rode through the night to rouse the countryside; Revere was seized by a British patrol near Lincoln, but Prescott escaped, leaping his horse over a stone wall and galloping on to warn Concord in time. At dawn on Lexington Green, Captain John Parker's 77 Minutemen stood their ground before the advancing column — a single disputed shot sparked a volley that killed eight colonists — yet by midmorning hundreds of Minutemen from more than a dozen towns had converged on North Bridge, fired back, and forced the Redcoats into a desperate 15-mile fighting retreat to Boston. The American Revolution had begun.</p>
+        <p>On the night of April 18, 1775, Lt. Colonel Francis Smith led approximately 700 British Regulars out of Boston under cover of darkness, ordered to march on Concord and destroy the colonial militia's hidden stores of arms, a mission meant to crush any rebellion before it could take root. To counter the threat, Paul Revere, William Dawes, and Samuel Prescott rode through the night to rouse the countryside; Revere was seized by a British patrol near Lincoln, but Prescott escaped, leaping his horse over a stone wall and galloping on to warn Concord in time. At dawn on Lexington Green, Captain John Parker's 77 Minutemen stood their ground before the advancing column, a single disputed shot sparked a volley that killed eight colonists, yet by midmorning hundreds of Minutemen from more than a dozen towns had converged on North Bridge, fired back, and forced the Redcoats into a desperate 15-mile fighting retreat to Boston. The American Revolution had begun.</p>
       </div>
       <div class="battle-img-wrap fi d1">
         <img
@@ -826,7 +839,7 @@
 
         <hr class="stat-hr"/>
         <p class="stat-body" style="text-align:center;">
-          Militia from Acton, Bedford, Lincoln, Woburn, Sudbury, Billerica, Chelmsford and others answered the alarm — outnumbering the British more than five to one by day's end.
+          Militia from Acton, Bedford, Lincoln, Woburn, Sudbury, Billerica, Chelmsford and others answered the alarm, outnumbering the British more than five to one by day's end.
         </p>
       </div>
 
@@ -884,7 +897,7 @@
       <h2 class="ch-title">The Transcendentalist Movement</h2>
     </div>
 
-    <p class="fi" style="font-size:1rem; font-style:italic; color:var(--ink-lt); line-height:1.8; max-width:740px; margin:0 0 8px;">In the 1830s and 1840s, Concord became the center of American intellectual life. Ralph Waldo Emerson settled here in 1835, and within a decade the town had drawn some of the most visionary minds of the 19th century — writers, philosophers, and activists who would reshape how Americans understood nature, individuality, and social justice. Their ideas, born in this small Massachusetts town, echo through American culture to this day.</p>
+    <p class="fi" style="font-size:1rem; font-style:italic; color:var(--ink-lt); line-height:1.8; max-width:740px; margin:0 0 8px;">In the 1830s and 1840s, Concord became the center of American intellectual life. Ralph Waldo Emerson settled here in 1835, and within a decade the town had drawn some of the most visionary minds of the 19th century, writers, philosophers, and activists who would reshape how Americans understood nature, individuality, and social justice. Their ideas, born in this small Massachusetts town, echo through American culture to this day.</p>
 
     <div class="figures-grid">
 
@@ -912,20 +925,18 @@
         </blockquote>
       </div>
 
-
       <!-- Alcott -->
-      <div class="figure-card fi d2">
+      <div class="figure-card fi d1">
         <img src="../proposal photos/Louisa_May_Alcott,_c._1870_-_Warren's_Portraits,_Boston.jpg"
              alt="Louisa May Alcott" class="figure-portrait"/>
         <div class="figure-info">
           <p class="figure-name">Louisa May Alcott</p>
           <span class="figure-dates">1832–1888</span>
-          <span class="figure-role">Author &amp; Social Activist</span>
+          <span class="figure-role">Author, Abolitionist &amp; Suffragist</span>
           <span class="figure-work">Key work: <em>Little Women</em> (1868)</span>
-          <p class="figure-body">Louisa grew up at Orchard House in Concord, surrounded by the Transcendentalist movement her father Bronson helped lead. <em>Little Women</em> drew directly from her Concord childhood and became one of the most beloved American novels ever written.</p>
+          <p class="figure-body">Louisa grew up at Orchard House in Concord, surrounded by the Transcendentalist movement her father Bronson helped lead. <em>Little Women</em> drew directly from her Concord childhood and became one of the most beloved American novels ever written. She also served as a Civil War nurse, campaigned for abolition, and was among the first women to register to vote in Concord after Massachusetts granted women municipal suffrage in 1879.</p>
         </div>
       </div>
-
 
     </div>
 
@@ -961,7 +972,7 @@
         south of Concord. In July 1845 Thoreau moved into a small cabin on its shore and stayed for
         two years, two months, and two days.</p>
         <p style="margin-top:16px;"><em>Walden</em>, published in 1854, became the foundational text
-        of the American conservation movement — its ideas reaching Gandhi, Martin Luther King Jr.,
+        of the American conservation movement, its ideas reaching Gandhi, Martin Luther King Jr.,
         and the land preservation efforts that would define Concord for generations to come.</p>
       </div>
     </div>
@@ -972,6 +983,99 @@
         <p>"I went to the woods because I wished to live deliberately… and not, when I came to die, discover that I had not lived."</p>
         <cite>— Henry David Thoreau, <em>Walden</em>, 1854</cite>
       </blockquote>
+    </div>
+
+    <div class="orn">
+      <div class="orn-line"></div>
+      <span class="orn-sym">✦</span>
+      <div class="orn-line"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     WOMEN OF CONCORD
+══════════════════════════════════════════════════════ -->
+<section id="visual-women" class="story-section">
+  <div class="wrap">
+
+    <div class="ch-head">
+      <h2 class="ch-title">Women Who Shaped Concord</h2>
+    </div>
+
+    <p class="fi" style="font-size:1rem; font-style:italic; color:var(--ink-lt); line-height:1.8; max-width:740px; margin:0 0 8px;">
+      From the farmwives who sheltered the Revolution to the writers and reformers who gave
+      Concord its intellectual soul, women have been at the center of this town's story at
+      every chapter, often uncelebrated, always essential.
+    </p>
+
+    <div class="figures-grid">
+
+      <div class="figure-card fi">
+        <img src="../proposal photos/13_concord_antislavery_1858_1.jpg"
+             alt="Concord Female Anti-Slavery Society, 1858" class="figure-portrait" style="width:175px;"/>
+        <div class="figure-info">
+          <p class="figure-name">The Concord Female Anti-Slavery Society</p>
+          <span class="figure-dates">Founded 1837</span>
+          <span class="figure-role">Abolitionist Organization — Concord, Massachusetts</span>
+          <span class="figure-work">Members include: Helen Thoreau, Mary Merrick Brooks, Sophia Thoreau, Lidian Emerson</span>
+          <p class="figure-body">In 1837, the same decade Emerson was writing <em>Nature</em> and
+          Thoreau was beginning his journals, a group of Concord women founded one of New England's
+          most active female anti-slavery organizations. They organized annual fairs, raised funds
+          for abolition, and supported the Underground Railroad. Helen Thoreau, Henry's sister and
+          a founding member, embodied the society's conviction that moral reform began at home.
+          Mary Merrick Brooks opened her house to escaped slaves and hosted Frederick Douglass.
+          These women turned Concord's philosophical ideals into direct action.</p>
+        </div>
+      </div>
+
+      <div class="figure-card fi d2">
+        <img src="../proposal photos/Margaret fuller.jpeg"
+             alt="Margaret Fuller" class="figure-portrait"/>
+        <div class="figure-info">
+          <p class="figure-name">Margaret Fuller</p>
+          <span class="figure-dates">1810–1850</span>
+          <span class="figure-role">Journalist, Critic &amp; Feminist</span>
+          <span class="figure-work">Key works: <em>The Dial</em> (1840–42), <em>Woman in the Nineteenth Century</em> (1845)</span>
+          <p class="figure-body">A frequent presence in Emerson's Concord and editor of
+          <em>The Dial</em>, the journal of the Transcendentalist movement, Fuller wrote
+          <em>Woman in the Nineteenth Century</em> in 1845, the first major feminist work
+          published in America. Emerson called her the most remarkable woman of her era.
+          She died at 40 in a shipwreck returning from Italy, where she had reported on the
+          Italian Revolution as America's first female foreign correspondent.</p>
+        </div>
+      </div>
+
+      <div class="figure-card fi d3">
+        <img src="../proposal photos/harriet lothrop.jpg"
+             alt="Harriet Lothrop" class="figure-portrait"/>
+        <div class="figure-info">
+          <p class="figure-name">Harriet Lothrop</p>
+          <span class="figure-dates">1844–1924</span>
+          <span class="figure-role">Author &amp; Historic Preservationist</span>
+          <span class="figure-work">Pen name: Margaret Sidney &nbsp;·&nbsp; <em>Five Little Peppers and How They Grew</em> (1881)</span>
+          <p class="figure-body">Harriet Lothrop lived at the Wayside, the Concord home
+          previously occupied by Hawthorne and the Alcotts, for more than four decades.
+          A beloved children's author, she was equally passionate about historic preservation.
+          She founded the Colonial Dames of America and spent decades advocating for the
+          protection of the Battle Road sites that would become Minute Man National Historical
+          Park in 1959.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="ctx-full fi" style="margin-top:32px; margin-bottom:8px;">
+      <p style="font-size:1rem; color:var(--ink-md); line-height:1.9;">
+        That tradition of women's civic leadership continues today across Concord's most
+        important institutions. Women have led and shaped organizations dedicated to
+        <strong>land preservation</strong>, <strong>climate initiatives</strong>,
+        <strong>historic landscape protection</strong>, and <strong>public education</strong>,
+        including the Concord Land Conservation Trust, the Concord Museum, and
+        Louisa May Alcott's Orchard House. The story Concord tells about itself, and the
+        land it chooses to protect, has long been guided by women's vision.
+      </p>
     </div>
 
     <div class="orn">
@@ -995,7 +1099,7 @@
 
     <p class="fi" style="font-size:1rem; color:var(--ink-md); line-height:1.9; max-width:740px; margin:0 0 24px;">
       On April 14, 1959, President Dwight D. Eisenhower signed legislation creating Minute Man
-      National Historical Park — protecting the six-mile stretch of road between Lexington and
+      National Historical Park, protecting the six-mile stretch of road between Lexington and
       Concord where the first battles of the American Revolution were fought. Today the park
       preserves more than 1,000 acres along the original Battle Road, including the North Bridge,
       Hartwell Tavern, and the historic landscapes that Thoreau himself walked. It draws nearly
@@ -1017,7 +1121,7 @@
 
     <p class="fi d2" style="font-size:1rem; font-style:italic; color:var(--ink-lt); line-height:1.8; max-width:740px; margin:0 0 24px;">
       The chart below tracks annual visitation to Minute Man NHP from its opening in 1960
-      through 2023 — showing how Concord became one of New England's most visited heritage destinations,
+      through 2023, showing how Concord became one of New England's most visited heritage destinations,
       with a dramatic spike during the 1976 Bicentennial and a sharp drop during COVID-19.
     </p>
 
@@ -1050,7 +1154,7 @@
 
     <p class="fi" style="font-size:1rem; font-style:italic; color:var(--ink-lt); line-height:1.8; max-width:740px; margin:0 0 28px;">
       Concord's commitment to protecting open land has grown dramatically in the 21st century.
-      While the town's population has remained relatively stable — growing just 6% from 2000 to 2023 —
+      While the town's population has remained relatively stable, growing just 6% from 2000 to 2023,
       its conserved acreage has expanded by 69%, driven by the Concord Land Conservation Trust
       and other preservation efforts. The numbers tell a story of a community that takes its
       environmental legacy seriously.
@@ -1066,7 +1170,7 @@
       Population: U.S. Census Bureau &nbsp;·&nbsp; Conservation acreage: Concord Land Conservation Trust estimates
     </p>
 
-    <div id="conservation-stats" class="stats-grid" style="max-width:640px; margin:0 auto 36px; grid-template-columns:repeat(2,1fr); opacity:0; transition:opacity 0.9s ease;">
+    <div id="conservation-stats" class="stats-grid fi d2" style="max-width:640px; margin:0 auto 36px; grid-template-columns:repeat(2,1fr);">
       <div class="stat-card">
         <p class="stat-title">Protected Land</p>
         <p class="stat-title-sub">Concord, MA — 2023</p>
@@ -1082,6 +1186,98 @@
     </div>
 
     <div class="orn">
+      <div class="orn-line"></div>
+      <span class="orn-sym">✦</span>
+      <div class="orn-line"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     VISUAL 5 — Modern Concord: Who We Are Today
+══════════════════════════════════════════════════════ -->
+<section id="visual-5" class="story-section">
+  <div class="wrap">
+
+    <div class="ch-head">
+      <h2 class="ch-title">Civic Leadership in Modern Concord</h2>
+    </div>
+
+    <!-- Mimi Graney — featured -->
+    <div class="ctx-with-img fi" style="margin-bottom:32px;">
+      <div class="ctx-full">
+        <p class="figure-name" style="font-size:1.15rem; color:var(--ink-dk); margin-bottom:6px;">Mimi Graney</p>
+        <span style="font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); margin-bottom:4px; display:block;">Present</span>
+        <span style="font-size:0.82rem; font-style:italic; color:var(--ink-lt); margin-bottom:14px; display:block;">Civic Leader &amp; Historic Preservation Advocate &nbsp;·&nbsp; Executive Director, Louisa May Alcott's Orchard House</span>
+        <p style="font-size:1rem; color:var(--ink-md); line-height:1.9;">Mimi Graney has been a defining force in Concord's civic and cultural life,
+        leading Louisa May Alcott's Orchard House, one of the most visited literary landmarks in the
+        United States. At the intersection of education, preservation, and public history, her work
+        carries forward the same tradition embodied by the women who came before her: Alcott, Fuller,
+        Lothrop. She is the living link between Concord's 19th-century intellectual legacy and its
+        identity today.</p>
+      </div>
+      <div class="battle-img-wrap" style="width:230px;">
+        <img src="../proposal photos/mimi graney.jpg"
+             alt="Mimi Graney" class="battle-img" style="width:230px;"/>
+        <p class="battle-caption">Mimi Graney<br><em>Executive Director, Orchard House</em></p>
+      </div>
+    </div>
+
+    <div class="orn">
+      <div class="orn-line"></div>
+      <span class="orn-sym">✦</span>
+      <div class="orn-line"></div>
+    </div>
+
+    <!-- ── Pete Funkhouser subsection ── -->
+    <div class="ch-head fi" style="margin-top:44px;">
+      <h2 class="ch-title">Civic Life in Action — Pete Funkhouser, 2026 Honored Citizen</h2>
+    </div>
+
+    <div class="ctx-with-img fi d1" style="margin-bottom:28px;">
+      <div class="ctx-full">
+        <p>Elmer "Pete" Funkhouser, 84, has spent more than three decades shaping civic life in Concord.
+        On March 29, 2026, the town named him its Honored Citizen, townsperson of the year. Returning
+        to Concord in 1997 after a career in international business, Funkhouser devoted himself to projects
+        "for the obvious good of society": raising $11 million to build the Beede Swim and Fitness Center,
+        co-founding Communities for Restorative Justice (now active in 30+ Massachusetts communities),
+        serving on the Finance Committee and the Orchard House board, and most recently joining the
+        Concord250 Trees Project, planting 250 trees as a living memorial to the 250th anniversary
+        of the Battles of Lexington and Concord.</p>
+      </div>
+      <div class="battle-img-wrap" style="width:380px;">
+        <img src="../proposal photos/HONORED-CITIZEN-detail-1-1536x1024.jpeg"
+             alt="Pete Funkhouser outside the Beede Swim and Fitness Center"
+             class="battle-img" style="width:380px;"/>
+        <p class="battle-caption">Outside the Beede Center<br>
+        <em>Photo: Trace Salzbrenner / The Concord Bridge</em></p>
+      </div>
+    </div>
+
+    <div class="park-gallery fi d1" style="margin-bottom:32px;">
+      <div class="park-photo">
+        <img src="../proposal photos/PeteFunkhouser3-1536x1024.jpg"
+             alt="Pete Funkhouser points to his name on a plaque at the Beede Center"/>
+        <p class="park-photo-caption">Pointing to his name on the Beede plaque<br>
+        <em>Photo: Trace Salzbrenner / The Concord Bridge</em></p>
+      </div>
+      <div class="park-photo">
+        <img src="../proposal photos/PeteFunkhouser4-1536x1024.jpg"
+             alt="Pete Funkhouser looks out at the pool at the Beede Center"/>
+        <p class="park-photo-caption">Looking out at the pool at the Beede Center<br>
+        <em>Photo: Trace Salzbrenner / The Concord Bridge</em></p>
+      </div>
+    </div>
+
+    <div style="text-align:center;" class="fi d2">
+      <blockquote class="emerson-q" style="max-width:560px;">
+        <p>"Being involved is a great way to stay active. You make a contribution to the community, and that's important."</p>
+        <cite>— Elmer "Pete" Funkhouser, Concord's 2026 Honored Citizen</cite>
+      </blockquote>
+    </div>
+
+    <div class="orn" style="margin-top:40px;">
       <div class="orn-line"></div>
       <span class="orn-sym">✦</span>
       <div class="orn-line"></div>
@@ -1107,6 +1303,14 @@ const fadeObs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
 }, { threshold: 0.12 });
 document.querySelectorAll('.fi').forEach(el => fadeObs.observe(el));
+
+document.querySelectorAll('[data-target]').forEach(badge => {
+  badge.style.cursor = 'pointer';
+  badge.addEventListener('click', () => {
+    const el = document.getElementById(badge.dataset.target);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
 
 function countUp(el, target, delay) {
   setTimeout(() => {
@@ -1490,7 +1694,7 @@ const conservationData = [
   {year:2022,pop:18053,acres:5290},{year:2023,pop:18086,acres:5420}
 ];
 
-const CW=900, CH=420, CM={top:52,right:88,bottom:58,left:78};
+const CW=900, CH=400, CM={top:52,right:72,bottom:58,left:78};
 const cInnerW=CW-CM.left-CM.right, cInnerH=CH-CM.top-CM.bottom;
 
 const cSvg=d3.select("#conservation-chart").attr("width",CW).attr("height",CH);
@@ -1545,7 +1749,7 @@ cG.append("g").attr("transform",`translate(${cInnerW},0)`)
 // Axis labels
 [
   {t:`translate(${CM.left-52},${CM.top+cInnerH/2}) rotate(-90)`,txt:"Population",fill:"#8b1a1a"},
-  {t:`translate(${CM.left+cInnerW+56},${CM.top+cInnerH/2}) rotate(90)`,txt:"Conserved Acres",fill:"#2d5a27"},
+  {t:`translate(${CM.left+cInnerW+44},${CM.top+cInnerH/2}) rotate(90)`,txt:"Conserved Acres",fill:"#2d5a27"},
   {t:`translate(${CM.left+cInnerW/2},${CH-22})`,txt:"Year",fill:"#8b6214"}
 ].forEach(l=>{
   cSvg.append("text").attr("transform",l.t).attr("text-anchor","middle")
@@ -1603,9 +1807,6 @@ function chartTick(ts){
   updateChartViz(Math.min(chElapsed,CHTOTAL));
   if(chElapsed<CHTOTAL){
     requestAnimationFrame(chartTick);
-  } else {
-    const statsEl=document.getElementById('conservation-stats');
-    if(statsEl) statsEl.style.opacity='1';
   }
 }
 const chartObs=new IntersectionObserver(entries=>{
