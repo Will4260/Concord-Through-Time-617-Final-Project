@@ -578,6 +578,16 @@
     .ann-hero { font-family:'IM Fell English',serif; font-size:14px; font-weight:bold; fill:#6b0000; }
 
     /* ══════════════════════════════════════════════
+       VISUAL 3 — Conservation chart
+    ══════════════════════════════════════════════ */
+    #conservation-chart-container {
+      display: inline-block;
+      box-shadow: 0 8px 36px rgba(80,50,10,0.35), 0 0 0 3px #8b6214, 0 0 0 7px #c8a840;
+      border-radius: 2px;
+      line-height: 0;
+    }
+
+    /* ══════════════════════════════════════════════
        VISUAL 4 — Minute Man NHP
     ══════════════════════════════════════════════ */
     .park-gallery {
@@ -604,16 +614,6 @@
       line-height: 1.4;
     }
     #minman-chart-container {
-      display: inline-block;
-      box-shadow: 0 8px 36px rgba(80,50,10,0.35), 0 0 0 3px #8b6214, 0 0 0 7px #c8a840;
-      border-radius: 2px;
-      line-height: 0;
-    }
-
-    /* ══════════════════════════════════════════════
-       VISUAL 3 — Conservation chart
-    ══════════════════════════════════════════════ */
-    #conservation-chart-container {
       display: inline-block;
       box-shadow: 0 8px 36px rgba(80,50,10,0.35), 0 0 0 3px #8b6214, 0 0 0 7px #c8a840;
       border-radius: 2px;
@@ -674,34 +674,34 @@
       </div>
 
       <div class="timeline-node fi d1">
-        <span class="node-year">1830s–50s</span>
+        <span class="node-year">1830s–40s</span>
         <div class="node-dot">2</div>
         <p class="node-title">The Transcendentalist Movement</p>
-        <p class="node-desc">Emerson, Thoreau &amp; Alcott — and Thoreau's years at Walden Pond</p>
+        <p class="node-desc">Emerson &amp; Thoreau make Concord America's intellectual capital</p>
         <span class="node-badge" data-target="visual-2">Visual 2 ↓</span>
       </div>
 
       <div class="timeline-node fi d2">
-        <span class="node-year">1959</span>
+        <span class="node-year">1845</span>
         <div class="node-dot">3</div>
+        <p class="node-title">Walden Pond</p>
+        <p class="node-desc">Thoreau's two years at Walden plant the seeds of American environmentalism</p>
+        <span class="node-badge" data-target="visual-3">Visual 3 ↓</span>
+      </div>
+
+      <div class="timeline-node fi d3">
+        <span class="node-year">1959</span>
+        <div class="node-dot">4</div>
         <p class="node-title">Minute Man National Historical Park</p>
         <p class="node-desc">Federal preservation launches Concord's heritage tourism economy</p>
         <span class="node-badge" data-target="visual-4">Visual 4 ↓</span>
       </div>
 
-      <div class="timeline-node fi d3">
-        <span class="node-year">2000s</span>
-        <div class="node-dot">4</div>
-        <p class="node-title">Concord's Conservation Record</p>
-        <p class="node-desc">A growing town doubles its protected land over two decades</p>
-        <span class="node-badge" data-target="visual-3">Visual 3 ↓</span>
-      </div>
-
       <div class="timeline-node fi d4">
-        <span class="node-year">Present</span>
+        <span class="node-year">2000s–Present</span>
         <div class="node-dot">5</div>
         <p class="node-title">Modern Concord — 250 Years Later</p>
-        <p class="node-desc">Population, demographics, and civic identity today</p>
+        <p class="node-desc">Conservation growth, demographics, and civic identity today</p>
         <span class="node-badge">Visual 5</span>
       </div>
 
@@ -983,6 +983,63 @@
   </div>
 </section>
 
+<!-- ══════════════════════════════════════════════════════
+     VISUAL 4 — Minute Man National Historical Park
+══════════════════════════════════════════════════════ -->
+<section id="visual-4" class="story-section">
+  <div class="wrap">
+
+    <div class="ch-head">
+      <h2 class="ch-title">Minute Man National Historical Park</h2>
+    </div>
+
+    <p class="fi" style="font-size:1rem; color:var(--ink-md); line-height:1.9; max-width:740px; margin:0 0 24px;">
+      On April 14, 1959, President Dwight D. Eisenhower signed legislation creating Minute Man
+      National Historical Park — protecting the six-mile stretch of road between Lexington and
+      Concord where the first battles of the American Revolution were fought. Today the park
+      preserves more than 1,000 acres along the original Battle Road, including the North Bridge,
+      Hartwell Tavern, and the historic landscapes that Thoreau himself walked. It draws nearly
+      a million visitors a year, making heritage tourism one of Concord's defining economic forces.
+    </p>
+
+    <div class="park-gallery fi d1">
+      <div class="park-photo">
+        <img src="../proposal photos/Minute Man National Historical Park.jpg"
+             alt="North Bridge at Minute Man National Historical Park"/>
+        <p class="park-photo-caption">North Bridge — where colonial militia fired back on April 19, 1775</p>
+      </div>
+      <div class="park-photo">
+        <img src="../proposal photos/Minute Man National Historical Park Statue.webp"
+             alt="The Minute Man statue at Concord"/>
+        <p class="park-photo-caption">The Minute Man statue by Daniel Chester French, dedicated 1875</p>
+      </div>
+    </div>
+
+    <p class="fi d2" style="font-size:1rem; font-style:italic; color:var(--ink-lt); line-height:1.8; max-width:740px; margin:0 0 24px;">
+      The chart below tracks annual visitation to Minute Man NHP from its opening in 1960
+      through 2023 — showing how Concord became one of New England's most visited heritage destinations,
+      with a dramatic spike during the 1976 Bicentennial and a sharp drop during COVID-19.
+    </p>
+
+    <div style="text-align:center; margin-bottom:12px;">
+      <div id="minman-chart-container" class="fi d2">
+        <svg id="minman-chart" width="900" height="420"></svg>
+      </div>
+    </div>
+
+    <p class="map-caption fi d3" style="margin-bottom:32px;">
+      Source: National Park Service — Visitor Use Statistics (IRMA)
+    </p>
+
+    <div class="orn">
+      <div class="orn-line"></div>
+      <span class="orn-sym">✦</span>
+      <div class="orn-line"></div>
+    </div>
+
+  </div>
+</section>
+
 <!-- 21st Century Conservation -->
 <section class="story-section">
   <div class="wrap">
@@ -1023,65 +1080,6 @@
         <div class="stat-lbl" style="margin-top:4px;">increase in protected acreage<br>vs. only +6% population growth</div>
       </div>
     </div>
-
-    <div class="orn">
-      <div class="orn-line"></div>
-      <span class="orn-sym">✦</span>
-      <div class="orn-line"></div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════════════
-     VISUAL 4 — Minute Man National Historical Park
-══════════════════════════════════════════════════════ -->
-<section id="visual-4" class="story-section">
-  <div class="wrap">
-
-    <div class="ch-head">
-      <h2 class="ch-title">Minute Man National Historical Park</h2>
-    </div>
-
-    <p class="fi" style="font-size:1rem; color:var(--ink-md); line-height:1.9; max-width:740px; margin:0 0 24px;">
-      On April 14, 1959, President Dwight D. Eisenhower signed legislation creating Minute Man
-      National Historical Park — protecting the six-mile stretch of road between Lexington and
-      Concord where the first battles of the American Revolution were fought. Today the park
-      preserves more than 1,000 acres along the original Battle Road, including the North Bridge,
-      Hartwell Tavern, and the historic landscapes that Thoreau himself walked. It draws nearly
-      a million visitors a year, making heritage tourism one of Concord's defining economic forces.
-    </p>
-
-    <!-- Photo gallery -->
-    <div class="park-gallery fi d1">
-      <div class="park-photo">
-        <img src="../proposal photos/Minute Man National Historical Park.jpg"
-             alt="North Bridge at Minute Man National Historical Park"/>
-        <p class="park-photo-caption">North Bridge — where colonial militia fired back on April 19, 1775</p>
-      </div>
-      <div class="park-photo">
-        <img src="../proposal photos/Minute Man National Historical Park Statue.webp"
-             alt="The Minute Man statue at Concord"/>
-        <p class="park-photo-caption">The Minute Man statue by Daniel Chester French, dedicated 1875</p>
-      </div>
-    </div>
-
-    <p class="fi d2" style="font-size:1rem; font-style:italic; color:var(--ink-lt); line-height:1.8; max-width:740px; margin:0 0 24px;">
-      The chart below tracks annual visitation to Minute Man NHP from its opening in 1960
-      through 2023 — showing how Concord became one of New England's most visited heritage destinations,
-      with a dramatic spike during the 1976 Bicentennial of the battle.
-    </p>
-
-    <!-- Bar chart -->
-    <div style="text-align:center; margin-bottom:12px;">
-      <div id="minman-chart-container" class="fi d2">
-        <svg id="minman-chart" width="900" height="420"></svg>
-      </div>
-    </div>
-
-    <p class="map-caption fi d3" style="margin-bottom:32px;">
-      Source: National Park Service — Visitor Use Statistics (IRMA)
-    </p>
 
     <div class="orn">
       <div class="orn-line"></div>
@@ -1338,8 +1336,8 @@ const annCapture   = makeAnn([-71.255,42.443], 14, -58,  "1:00 AM — Revere is 
 const annPrescott  = makeAnn([-71.300,42.456], 12, -62,  "Samuel Prescott escapes!","He rides on to warn Concord", 210, false);
 const annLexington = makeAnn([-71.222,42.447], 10, 24,   "Dawn, April 19 — First shots fired","at Lexington Green", 210, false);
 const annMilitia   = makeAnn([-71.420,42.375], 10, 0,    "The alarm spreads —","Minutemen from all towns respond", 200, false);
-const annNorthBridge = makeAnn([-71.361,42.469], 18, -68, “”The Shot Heard Round the World””,”North Bridge, Concord — 7:00 AM”, 245, true);
-const annRetreat   = makeAnn([-71.160,42.440], -220, 18,  “The British retreat —“,”a 15-mile running battle begins”, 212, false);
+const annNorthBridge = makeAnn([-71.361,42.469], 18, -68, "“The Shot Heard Round the World”","North Bridge, Concord — 7:00 AM", 245, true);
+const annRetreat   = makeAnn([-71.160,42.440], -220, 18,  "The British retreat —","a 15-mile running battle begins", 212, false);
 
 const ccW = 400, ccH = 76;
 const ccX = W/2 - ccW/2, ccY = H/2 - ccH/2 + 10;
@@ -1548,7 +1546,7 @@ cG.append("g").attr("transform",`translate(${cInnerW},0)`)
 [
   {t:`translate(${CM.left-52},${CM.top+cInnerH/2}) rotate(-90)`,txt:"Population",fill:"#8b1a1a"},
   {t:`translate(${CM.left+cInnerW+56},${CM.top+cInnerH/2}) rotate(90)`,txt:"Conserved Acres",fill:"#2d5a27"},
-  {t:`translate(${CM.left+cInnerW/2},${CH-10})`,txt:"Year",fill:"#8b6214"}
+  {t:`translate(${CM.left+cInnerW/2},${CH-22})`,txt:"Year",fill:"#8b6214"}
 ].forEach(l=>{
   cSvg.append("text").attr("transform",l.t).attr("text-anchor","middle")
     .attr("font-family","'IM Fell English',serif").attr("font-size","13px")
@@ -1641,25 +1639,22 @@ const mmData = [
   {y:2020,v:388000},{y:2021,v:652000},{y:2022,v:798000},{y:2023,v:851000}
 ];
 
-const MW=900, MH=420, MM={top:52,right:40,bottom:54,left:84};
-const mInnerW=MW-MM.left-MM.right, mInnerH=MH-MM.top-MM.bottom;
+const MW=900, MH=420, MMar={top:52,right:40,bottom:54,left:84};
+const mInnerW=MW-MMar.left-MMar.right, mInnerH=MH-MMar.top-MMar.bottom;
 
 const mSvg=d3.select("#minman-chart").attr("width",MW).attr("height",MH);
-const mDefs=mSvg.append("defs");
 
-// White background
 mSvg.append("rect").attr("width",MW).attr("height",MH).attr("fill","#fefefe");
 [{x:8,sw:2},{x:14,sw:0.7}].forEach(b=>{
   mSvg.append("rect").attr("x",b.x).attr("y",b.x).attr("width",MW-2*b.x).attr("height",MH-2*b.x)
     .attr("fill","none").attr("stroke","#8b6214").attr("stroke-width",b.sw);
 });
 
-const mG=mSvg.append("g").attr("transform",`translate(${MM.left},${MM.top})`);
+const mG=mSvg.append("g").attr("transform",`translate(${MMar.left},${MMar.top})`);
 
 const mX=d3.scaleBand().domain(mmData.map(d=>d.y)).range([0,mInnerW]).padding(0.12);
 const mY=d3.scaleLinear().domain([0,1250000]).range([mInnerH,0]);
 
-// Axes
 mG.append("g").attr("transform",`translate(0,${mInnerH})`)
   .call(d3.axisBottom(mX).tickValues([1960,1970,1976,1980,1990,2000,2010,2020,2023]).tickFormat(d3.format("d")))
   .call(g=>g.select(".domain").attr("stroke","#8b6214"))
@@ -1671,20 +1666,17 @@ mG.append("g").call(d3.axisLeft(mY).ticks(5).tickFormat(d=>d>=1000000?(d/1000000
   .call(g=>g.selectAll(".tick line").attr("stroke","#8b6214"))
   .call(g=>g.selectAll(".tick text").attr("font-family","'IM Fell English',serif").attr("font-size","11px").attr("fill","#555"));
 
-// Axis labels
-mSvg.append("text").attr("transform",`translate(${MM.left-62},${MM.top+mInnerH/2}) rotate(-90)`)
+mSvg.append("text").attr("transform",`translate(${MMar.left-50},${MMar.top+mInnerH/2}) rotate(-90)`)
   .attr("text-anchor","middle").attr("font-family","'IM Fell English',serif")
   .attr("font-size","13px").attr("fill","#555").text("Annual Visitors");
-mSvg.append("text").attr("x",MW/2).attr("y",MH-8)
+mSvg.append("text").attr("x",MW/2).attr("y",MH-20)
   .attr("text-anchor","middle").attr("font-family","'IM Fell English',serif")
   .attr("font-size","12px").attr("fill","#8b6214").text("Year");
 
-// Chart title
 mSvg.append("text").attr("x",MW/2).attr("y",30).attr("text-anchor","middle")
   .attr("font-family","'IM Fell English',serif").attr("font-size","15px").attr("fill","#1e0804")
   .text("Minute Man NHP — Annual Visitation (1960–2023)");
 
-// Milestone lines
 [{y:1976,l:"1976 Bicentennial"},{y:2020,l:"COVID-19"}].forEach(m=>{
   const x=mX(m.y)+mX.bandwidth()/2;
   mG.append("line").attr("x1",x).attr("y1",0).attr("x2",x).attr("y2",mInnerH)
@@ -1694,14 +1686,12 @@ mSvg.append("text").attr("x",MW/2).attr("y",30).attr("text-anchor","middle")
     .attr("fill","rgba(139,98,20,0.52)").text(m.l);
 });
 
-// Bars — start at 0, animate up
 const mBars=mG.selectAll(".mm-bar").data(mmData).join("rect")
   .attr("class","mm-bar")
   .attr("x",d=>mX(d.y)).attr("width",mX.bandwidth())
   .attr("y",mInnerH).attr("height",0)
   .attr("fill","rgba(139,98,20,0.68)");
 
-// Animation
 const MM_TOTAL=3200;
 let mmElapsed=0, mmLastTS=null, mmRunning=false;
 
